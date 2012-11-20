@@ -11,7 +11,30 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121120154725) do
+ActiveRecord::Schema.define(:version => 20121120183626) do
+
+  create_table "expedientes", :force => true do |t|
+    t.string   "tipo_expediente"
+    t.date     "fecha_creacion"
+    t.string   "tipo_familia"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "motivo_consulta", :force => true do |t|
+    t.string   "motivo_inicial"
+    t.string   "motivo_real"
+    t.string   "derivacion"
+    t.string   "estado"
+    t.date     "fecha_inicio"
+    t.date     "fecha_fin"
+    t.string   "nivel_importancia"
+    t.integer  "expediente_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  add_index "motivo_consulta", ["expediente_id"], :name => "index_motivo_consulta_on_expediente_id"
 
   create_table "pacientes", :force => true do |t|
     t.string   "cedula"
