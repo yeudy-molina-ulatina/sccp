@@ -1,0 +1,37 @@
+<h1>Listing motivo_consulta</h1>
+
+<table>
+  <tr>
+    <th>Motivo inicial</th>
+    <th>Motivo real</th>
+    <th>Derivacion</th>
+    <th>Estado</th>
+    <th>Fecha inicio</th>
+    <th>Fecha fin</th>
+    <th>Nivel importancia</th>
+    <th>Expediente</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @motivo_consulta.each do |motivo_consultum| %>
+  <tr>
+    <td><%= motivo_consultum.motivo_inicial %></td>
+    <td><%= motivo_consultum.motivo_real %></td>
+    <td><%= motivo_consultum.derivacion %></td>
+    <td><%= motivo_consultum.estado %></td>
+    <td><%= motivo_consultum.fecha_inicio %></td>
+    <td><%= motivo_consultum.fecha_fin %></td>
+    <td><%= motivo_consultum.nivel_importancia %></td>
+    <td><%= motivo_consultum.expediente %></td>
+    <td><%= link_to 'Show', motivo_consultum %></td>
+    <td><%= link_to 'Edit', edit_motivo_consultum_path(motivo_consultum) %></td>
+    <td><%= link_to 'Destroy', motivo_consultum, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Motivo consultum', new_motivo_consultum_path %>

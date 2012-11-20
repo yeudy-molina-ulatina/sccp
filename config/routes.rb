@@ -1,4 +1,8 @@
 Sccp::Application.routes.draw do
+  resources :motivo_consulta
+
+  resources :expedientes
+
   resources :pacientes
 
   # The priority is based upon order of creation:

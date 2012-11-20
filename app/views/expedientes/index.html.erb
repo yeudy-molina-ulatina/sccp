@@ -1,0 +1,27 @@
+<h1>Listing expedientes</h1>
+
+<table>
+  <tr>
+    <th>Tipo expediente</th>
+    <th>Fecha creacion</th>
+    <th>Tipo familia</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @expedientes.each do |expediente| %>
+  <tr>
+    <td><%= expediente.tipo_expediente %></td>
+    <td><%= expediente.fecha_creacion %></td>
+    <td><%= expediente.tipo_familia %></td>
+    <td><%= link_to 'Show', expediente %></td>
+    <td><%= link_to 'Edit', edit_expediente_path(expediente) %></td>
+    <td><%= link_to 'Destroy', expediente, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Expediente', new_expediente_path %>
