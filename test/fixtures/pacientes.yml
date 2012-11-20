@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cedula: MyString
+  nombre: MyString
+  apellido1: MyString
+  apellido2: MyString
+  fecha_nacimiento: 2012-11-20
+  genero: MyString
+  estado_civil: MyString
+  provincia: MyString
+  canton: MyString
+  distrito: MyString
+  otras_senas: MyText
+  telefono_casa: MyString
+  telefono_celular: MyString
+  correo_electronico: MyString
+  nacionalidad: MyString
+  anos_estudio: 1
+  profesion: MyString
+  ocupacion: MyString
+
+two:
+  cedula: MyString
+  nombre: MyString
+  apellido1: MyString
+  apellido2: MyString
+  fecha_nacimiento: 2012-11-20
+  genero: MyString
+  estado_civil: MyString
+  provincia: MyString
+  canton: MyString
+  distrito: MyString
+  otras_senas: MyText
+  telefono_casa: MyString
+  telefono_celular: MyString
+  correo_electronico: MyString
+  nacionalidad: MyString
+  anos_estudio: 1
+  profesion: MyString
+  ocupacion: MyString

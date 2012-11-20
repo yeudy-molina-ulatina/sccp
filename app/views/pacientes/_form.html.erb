@@ -1,0 +1,89 @@
+<%= form_for(@paciente) do |f| %>
+  <% if @paciente.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@paciente.errors.count, "error") %> prohibited this paciente from being saved:</h2>
+
+      <ul>
+      <% @paciente.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cedula %><br />
+    <%= f.text_field :cedula %>
+  </div>
+  <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :apellido1 %><br />
+    <%= f.text_field :apellido1 %>
+  </div>
+  <div class="field">
+    <%= f.label :apellido2 %><br />
+    <%= f.text_field :apellido2 %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_nacimiento %><br />
+    <%= f.date_select :fecha_nacimiento %>
+  </div>
+  <div class="field">
+    <%= f.label :genero %><br />
+    <%= f.text_field :genero %>
+  </div>
+  <div class="field">
+    <%= f.label :estado_civil %><br />
+    <%= f.text_field :estado_civil %>
+  </div>
+  <div class="field">
+    <%= f.label :provincia %><br />
+    <%= f.text_field :provincia %>
+  </div>
+  <div class="field">
+    <%= f.label :canton %><br />
+    <%= f.text_field :canton %>
+  </div>
+  <div class="field">
+    <%= f.label :distrito %><br />
+    <%= f.text_field :distrito %>
+  </div>
+  <div class="field">
+    <%= f.label :otras_senas %><br />
+    <%= f.text_area :otras_senas %>
+  </div>
+  <div class="field">
+    <%= f.label :telefono_casa %><br />
+    <%= f.text_field :telefono_casa %>
+  </div>
+  <div class="field">
+    <%= f.label :telefono_celular %><br />
+    <%= f.text_field :telefono_celular %>
+  </div>
+  <div class="field">
+    <%= f.label :correo_electronico %><br />
+    <%= f.text_field :correo_electronico %>
+  </div>
+  <div class="field">
+    <%= f.label :nacionalidad %><br />
+    <%= f.text_field :nacionalidad %>
+  </div>
+  <div class="field">
+    <%= f.label :anos_estudio %><br />
+    <%= f.number_field :anos_estudio %>
+  </div>
+  <div class="field">
+    <%= f.label :profesion %><br />
+    <%= f.text_field :profesion %>
+  </div>
+  <div class="field">
+    <%= f.label :ocupacion %><br />
+    <%= f.text_field :ocupacion %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

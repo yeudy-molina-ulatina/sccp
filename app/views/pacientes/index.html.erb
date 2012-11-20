@@ -1,0 +1,57 @@
+<h1>Listing pacientes</h1>
+
+<table>
+  <tr>
+    <th>Cedula</th>
+    <th>Nombre</th>
+    <th>Apellido1</th>
+    <th>Apellido2</th>
+    <th>Fecha nacimiento</th>
+    <th>Genero</th>
+    <th>Estado civil</th>
+    <th>Provincia</th>
+    <th>Canton</th>
+    <th>Distrito</th>
+    <th>Otras senas</th>
+    <th>Telefono casa</th>
+    <th>Telefono celular</th>
+    <th>Correo electronico</th>
+    <th>Nacionalidad</th>
+    <th>Anos estudio</th>
+    <th>Profesion</th>
+    <th>Ocupacion</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pacientes.each do |paciente| %>
+  <tr>
+    <td><%= paciente.cedula %></td>
+    <td><%= paciente.nombre %></td>
+    <td><%= paciente.apellido1 %></td>
+    <td><%= paciente.apellido2 %></td>
+    <td><%= paciente.fecha_nacimiento %></td>
+    <td><%= paciente.genero %></td>
+    <td><%= paciente.estado_civil %></td>
+    <td><%= paciente.provincia %></td>
+    <td><%= paciente.canton %></td>
+    <td><%= paciente.distrito %></td>
+    <td><%= paciente.otras_senas %></td>
+    <td><%= paciente.telefono_casa %></td>
+    <td><%= paciente.telefono_celular %></td>
+    <td><%= paciente.correo_electronico %></td>
+    <td><%= paciente.nacionalidad %></td>
+    <td><%= paciente.anos_estudio %></td>
+    <td><%= paciente.profesion %></td>
+    <td><%= paciente.ocupacion %></td>
+    <td><%= link_to 'Show', paciente %></td>
+    <td><%= link_to 'Edit', edit_paciente_path(paciente) %></td>
+    <td><%= link_to 'Destroy', paciente, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Paciente', new_paciente_path %>
