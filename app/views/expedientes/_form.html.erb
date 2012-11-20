@@ -1,0 +1,29 @@
+<%= form_for(@expediente) do |f| %>
+  <% if @expediente.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@expediente.errors.count, "error") %> prohibited this expediente from being saved:</h2>
+
+      <ul>
+      <% @expediente.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tipo_expediente %><br />
+    <%= f.text_field :tipo_expediente %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_creacion %><br />
+    <%= f.date_select :fecha_creacion %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo_familia %><br />
+    <%= f.text_field :tipo_familia %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

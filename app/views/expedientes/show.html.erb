@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Tipso expediente:</b>
+  <%= @expediente.tipo_expediente %>
+</p>
+
+<p>
+  <b>Fecha creacion:</b>
+  <%= @expediente.fecha_creacion %>
+</p>
+
+<p>
+  <b>Tipo familia:</b>
+  <%= @expediente.tipo_familia %>
+</p>
+
+
+<%= link_to 'Edit', edit_expediente_path(@expediente) %> |
+<%= link_to 'Back', expedientes_path %>
