@@ -1,6 +1,4 @@
 Sccp::Application.routes.draw do
-  resources :motivo_consulta
-
   resources :expedientes
 
   resources :pacientes
