@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<p1>
 <p>
   <b>Nombre:</b>
   <%= @paciente.nombre %>
@@ -8,7 +9,6 @@
   <b>Apellido 2:</b>
   <%= @paciente.apellido2 %>
 </p>
-
 
 <p>
   <b>Cedula:</b>
@@ -25,10 +25,38 @@
 </p>
 
 <p>
+  <b>Nacionalidad:</b>
+  <%= @paciente.nacionalidad %>
+</p>
+
+<p>
   <b>Estado civil:</b>
   <%= @paciente.estado_civil %>
 </p>
+</p1>
+<p2>
+<p>
+  <b>Telefono casa:</b>
+  <%= @paciente.telefono_casa %>
+  <b>Telefono celular:</b>
+  <%= @paciente.telefono_celular %>
+  <b>Correo electronico:</b>
+  <%= @paciente.correo_electronico %>
+</p>
+</p2>
 
+<p3>
+<p>
+  <b>Ocupacion:</b>
+  <%= @paciente.ocupacion %>
+  <b>Profesion:</b>
+  <%= @paciente.profesion %>
+  <b>Anios estudio:</b>
+  <%= @paciente.anos_estudio %>
+</p>
+</p3>
+
+<p4>
 <p>
   <b>Provincia:</b>
   <%= @paciente.provincia %>
@@ -42,42 +70,8 @@
   <b>Otras senas:</b>
   <%= @paciente.otras_senas %>
 </p>
-
-<p>
-  <b>Telefono casa:</b>
-  <%= @paciente.telefono_casa %>
-</p>
-
-<p>
-  <b>Telefono celular:</b>
-  <%= @paciente.telefono_celular %>
-</p>
-
-<p>
-  <b>Correo electronico:</b>
-  <%= @paciente.correo_electronico %>
-</p>
-
-<p>
-  <b>Nacionalidad:</b>
-  <%= @paciente.nacionalidad %>
-</p>
-
-<p>
-  <b>Anos estudio:</b>
-  <%= @paciente.anos_estudio %>
-</p>
-
-<p>
-  <b>Profesion:</b>
-  <%= @paciente.profesion %>
-</p>
-
-<p>
-  <b>Ocupacion:</b>
-  <%= @paciente.ocupacion %>
-</p>
+</p4>
 
 
-<%= link_to 'Edit', edit_paciente_path(@paciente) %> |
-<%= link_to 'Back', pacientes_path %>
+<%= button_to 'Editar', edit_paciente_path(@paciente),:method => :get %>
+<%= button_to 'Regresar', pacientes_path, :method => :get  %>
