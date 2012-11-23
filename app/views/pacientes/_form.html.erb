@@ -11,98 +11,100 @@
     </div>
   <% end %>
 
- 
+
+ <div1 >
+  <div0>
+  <img name="Foto del paciente" src="" width="232" height="200" alt="">
+  </div0>
+  <div>
+    <%= f.label "Nombre:" %> 
+   <%= f.text_field :nombre %>
+   <%= f.label "Apellido 1:" %> 
+   <%= f.text_field :apellido1 %>
+   <%= f.label "Apellido 2:" %> 
+   <%= f.text_field :apellido2 %>
+  </div>
+      
   <div class="field">
-    <%= f.label "Nombre" %><br />
-    <%= f.text_field :nombre %>
+  <%= f.label "Cedula:" %>
+  <%= f.text_field :cedula %>
   </div>
   
   <div class="field">
-    <%= f.label "Primer Apellido" %><br />
-    <%= f.text_field :apellido1 %>
-  </div>
-  
-  <div class="field">
-    <%= f.label "Segundo Apellido" %><br />
-    <%= f.text_field :apellido2 %>
-  </div>
-  
-  <div class="field">
-    <%= f.label "Cedula" %><br />
-    <%= f.text_field :cedula %>
-  </div>
-  
-  <div class="field">
-    <%= f.label "Fecha de nacimiento" %><br />
+    <%= f.label "Fecha de nacimiento:" %>
     <%= f.date_select :fecha_nacimiento %>
   </div>
   
   <div class="field">
-    <%= f.label "Genero" %><br />
-    <%= f.text_field :genero %>
+    <%= f.label "Genero:" %>
+	<%= f.text_field :genero %>
+ 	<select>
+	<option>Masculino</option>
+    <option>Femenino</option>
+	</select>
   </div>
   
   <div class="field">
-    <%= f.label "Estado Civil" %><br />
-    <%= f.text_field :estado_civil %>
-  </div>
-  
-  <div class="field">
-    <%= f.label "Provincia" %><br />
-    <%= f.text_field :provincia %>
-  </div>
-  
-  <div class="field">
-    <%= f.label "Canton" %><br />
-    <%= f.text_field :canton %>
-  </div>
-  
-  <div class="field">
-    <%= f.label "Distrito" %><br />
-    <%= f.text_field :distrito %>
-  </div>
-  
-  <div class="field">
-    <%= f.label "Otras senias" %><br />
-    <%= f.text_area :otras_senas %>
-  </div>
-  
-  <div class="field">
-    <%= f.label "Telefono casa" %><br />
-    <%= f.text_field :telefono_casa %>
-  </div>
-  
-  <div class="field">
-    <%= f.label "Telefono celular" %><br />
-    <%= f.text_field :telefono_celular %>
-  </div>
-  
-  <div class="field">
-    <%= f.label "Correo electronico" %><br />
-    <%= f.text_field :correo_electronico %>
-  </div>
-  
-  <div class="field">
-    <%= f.label "Nacionalidad" %><br />
+    <%= f.label "Nacionalidad:" %>
     <%= f.text_field :nacionalidad %>
   </div>
   
   <div class="field">
-    <%= f.label "Anios estudio" %><br />
+    <%= f.label "Estado Civil: " %>
+    <%= f.text_field :estado_civil %>
+	<select>
+	<option>Soltero/a</option>
+      <option>Casado/a</option>
+      <option>Divorciado/a</option>
+      <option>Viudo/a</option>
+      <option>Union libre</option>
+      <option>Separado/a</option>
+    </select>
+  </div>
+ </div1>   
+ 
+<div2>  
+  <div class="field">
+    <%= f.label "Telefono casa:" %>
+    <%= f.text_field :telefono_casa %>
+	<%= f.label "Telefono celular:" %>
+    <%= f.text_field :telefono_celular %>
+	<%= f.label "Correo electronico:" %>
+    <%= f.text_field :correo_electronico %>
+  </div>
+</div2>
+
+<div3>
+  <div class="field">
+    <%= f.label "Ocupacion:" %>
+    <%= f.text_field :ocupacion %>
+	<%= f.label "Profesion:" %>
+    <%= f.text_field :profesion %>
+	<%= f.label "Anios estudio:" %>
     <%= f.number_field :anos_estudio %>
   </div>
-  
+</div3>
+
+<div4>  
   <div class="field">
-    <%= f.label "Profesion" %><br />
-    <%= f.text_field :profesion %>
+    <%= f.label "Provincia:" %>
+    <%= f.text_field :provincia %>
+	<%= f.label "Canton:" %>
+    <%= f.text_field :canton %>
+	<%= f.label "Distrito:" %>
+    <%= f.text_field :distrito %>
   </div>
   
+    
   <div class="field">
-    <%= f.label "Ocupacion" %><br />
-    <%= f.text_field :ocupacion %>
+    <%= f.label "Otras senias:" %>
+    <%= f.text_area :otras_senas %>
   </div>
+</div4>
   
+ 
   <div class="actions">
     <%= f.submit %>
   </div>
+ 
 <% end %>
