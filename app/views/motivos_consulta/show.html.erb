@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Motivo inicial:</b>
+  <%= @motivo_consulta.motivo_inicial %>
+</p>
+
+<p>
+  <b>Motivo real:</b>
+  <%= @motivo_consulta.motivo_real %>
+</p>
+
+<p>
+  <b>Derivacion:</b>
+  <%= @motivo_consulta.derivacion %>
+</p>
+
+<p>
+  <b>Estado:</b>
+  <%= @motivo_consulta.estado %>
+</p>
+
+<p>
+  <b>Fecha inicio:</b>
+  <%= @motivo_consulta.fecha_inicio %>
+</p>
+
+<p>
+  <b>Fecha fin:</b>
+  <%= @motivo_consulta.fecha_fin %>
+</p>
+
+<p>
+  <b>Nivel importancia:</b>
+  <%= @motivo_consulta.nivel_importancia %>
+</p>
+
+<p>
+  <b>Expediente:</b>
+  <%= @motivo_consulta.expediente %>
+</p>
+
+
+<%= link_to 'Edit', edit_motivo_consulta_path(@motivo_consulta) %> |
+<%= link_to 'Back', motivos_consulta_path %>
