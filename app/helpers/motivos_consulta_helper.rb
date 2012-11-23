@@ -1,0 +1,2 @@
+module MotivosConsultaHelper
+end
