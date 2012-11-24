@@ -1,10 +1,12 @@
-<h1>Listing expedientes</h1>
-
+<div id=divhead>
+<h1 class="head">Listado de expedientes</h1>
+<div/>
+<div id=divbody>
 <table>
   <tr>
-    <th>Tipo expediente</th>
-    <th>Fecha creacion</th>
-    <th>Tipo familia</th>
+    <th class="custom">Tipo expediente</th>
+    <th class="custom">Fecha creacion</th>
+    <th class="custom">Tipo familia</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,16 +14,17 @@
 
 <% @expedientes.each do |expediente| %>
   <tr>
-    <td><%= expediente.tipo_expediente %></td>
-    <td><%= expediente.fecha_creacion %></td>
-    <td><%= expediente.tipo_familia %></td>
-    <td><%= link_to 'Show', expediente %></td>
-    <td><%= link_to 'Edit', edit_expediente_path(expediente) %></td>
-    <td><%= link_to 'Destroy', expediente, confirm: 'Are you sure?', method: :delete %></td>
+    <td class="custom"><%= expediente.tipo_expediente %></td>
+    <td class="custom"><%= expediente.fecha_creacion %></td>
+    <td class="custom"><%= expediente.tipo_familia %></td>
+    <td><%= link_to 'Ver', expediente %></td>
+    <td><%= link_to 'Editar', edit_expediente_path(expediente) %></td>
+    <td><%= link_to 'Archivar', expediente, confirm: 'Seguro que desea archivarlo?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
-
+<div/>
 <br />
-
-<%= link_to 'New Expediente', new_expediente_path %>
+<p class="footer">
+<%= link_to 'Crear nuevo expediente', new_expediente_path %>
+<p>

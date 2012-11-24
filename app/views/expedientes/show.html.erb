@@ -1,12 +1,16 @@
+<h1 class="head">Expediente de <%= @expediente.tipo_expediente %></h1>
+
+<div id=divbody>
 <p id="notice"><%= notice %></p>
 
+
 <p>
-  <b>Tipso expediente:</b>
+  <b>Tipo expediente:</b>
   <%= @expediente.tipo_expediente %>
 </p>
 
 <p>
-  <b>Fecha creacion:</b>
+  <b>Fecha creacion:</b> 
   <%= @expediente.fecha_creacion %>
 </p>
 
@@ -16,5 +20,7 @@
 </p>
 
 
+
 <%= link_to 'Edit', edit_expediente_path(@expediente) %> |
 <%= link_to 'Back', expedientes_path %>
+<div/>
