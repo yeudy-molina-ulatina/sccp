@@ -26,7 +26,7 @@
   </div>
       
   <div class="field">
-  <%= f.label "Cedula:" %>
+  <%= f.label "Cédula:" %>
   <%= f.text_field :cedula %>
   </div>
   
@@ -37,12 +37,8 @@
   
   <div class="field">
     <%= f.label "Genero:" %>
-	<%= f.text_field :genero %>
- 	<select>
-	<option>Masculino</option>
-    <option>Femenino</option>
-	</select>
-  </div>
+	<%= select_tag "paciente[genero]", options_for_select(%w{ Masculino Femenino}) %>
+ </div>
   
   <div class="field">
     <%= f.label "Nacionalidad:" %>
@@ -65,22 +61,22 @@
  
 <div2>  
   <div class="field"border: 3px solid #77d;>
-    <%= f.label "Telefono casa:" %>
+    <%= f.label "Teléfono casa:" %>
     <%= f.text_field :telefono_casa %>
-	<%= f.label "Telefono celular:" %>
+	<%= f.label "Teléfono celular:" %>
     <%= f.text_field :telefono_celular %>
-	<%= f.label "Correo electronico:" %>
+	<%= f.label "Correo electrónico:" %>
     <%= f.text_field :correo_electronico %>
   </div>
 </div2>
 
 <div3>
   <div class="field">
-    <%= f.label "Ocupacion:" %>
+    <%= f.label "Ocupación:" %>
     <%= f.text_field :ocupacion %>
-	<%= f.label "Profesion:" %>
+	<%= f.label "Profesión:" %>
     <%= f.text_field :profesion %>
-	<%= f.label "Anios estudio:" %>
+	<%= f.label "Años de estudio:" %>
     <%= f.number_field :anos_estudio %>
   </div>
 </div3>
@@ -89,7 +85,7 @@
   <div class="field">
     <%= f.label "Provincia:" %>
     <%= f.text_field :provincia %>
-	<%= f.label "Canton:" %>
+	<%= f.label "Cantón:" %>
     <%= f.text_field :canton %>
 	<%= f.label "Distrito:" %>
     <%= f.text_field :distrito %>
@@ -97,7 +93,7 @@
   
     
   <div class="field">
-    <%= f.label "Otras senias:" %>
+    <%= f.label "Otras señas:" %>
     <%= f.text_area :otras_senas %>
   </div>
 </div4>

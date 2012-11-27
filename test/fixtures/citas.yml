@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  fecha: 2012-11-27
+  lugar_atencion: MyString
+  hora: MyString
+  duracion: MyString
+
+two:
+  fecha: 2012-11-27
+  lugar_atencion: MyString
+  hora: MyString
+  duracion: MyString
