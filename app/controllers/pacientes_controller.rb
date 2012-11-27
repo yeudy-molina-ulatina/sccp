@@ -2,7 +2,12 @@ class PacientesController < ApplicationController
   # GET /pacientes
   # GET /pacientes.json
   def index
-    @pacientes = Paciente.all
+    
+    if params[:char].nil?
+      @pacientes = Paciente.all
+    elsif
+      @pacientes = Paciente.where("apellido1 = ?", params[:char])
+    end
 
     respond_to do |format|
       format.html # index.html.erb
