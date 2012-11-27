@@ -25,6 +25,7 @@ class PacientesController < ApplicationController
   # GET /pacientes/new.json
   def new
     @paciente = Paciente.new
+	@expediente = Expediente.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,10 +42,16 @@ class PacientesController < ApplicationController
   # POST /pacientes.json
   def create
     @paciente = Paciente.new(params[:paciente])
+	@expediente = Expediente.new(params = 
+	{:tipo_expediente => "Individual",
+	:fecha_creacion => ::Date.today,
+	:tipo_familia => "-"})
+	@paciente.expedientes.push(@expediente)
+
 
     respond_to do |format|
       if @paciente.save
-        format.html { redirect_to @paciente, notice: 'Paciente was successfully created.' }
+		format.html { redirect_to @paciente, notice: 'Paciente was successfully created.' }
         format.json { render json: @paciente, status: :created, location: @paciente }
       else
         format.html { render action: "new" }
