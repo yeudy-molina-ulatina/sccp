@@ -3,11 +3,16 @@ class ExpedientesController < ApplicationController
   # GET /expedientes.json
   def index
     @expedientes = Expediente.all
+    
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @expedientes }
     end
+  end
+  
+  def get_paciente
+   # voy acá !!!!
   end
 
   # GET /expedientes/1
