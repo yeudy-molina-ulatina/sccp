@@ -1,9 +1,11 @@
 <h1>Lista de Pacientes</h1>
 <body>
-<div method="get" action="">
-  Buscar: <%= search_field_tag 'nombre' %>
-</div>
-
+	
+	<%= form_tag pacientes_path, :id => "form_buscar", :method => :get do%>
+    	Buscar: <%= search_field_tag 'busqueda' %> 
+  		<%= submit_tag 'Buscar', :id => 'submit_buscar' %> 
+  	<% end %> 
+  	
 <p>
 	<% for char in 'A'..'Z' %>
 		<%= link_to char, pacientes_path(:char => char) %>

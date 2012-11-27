@@ -3,10 +3,12 @@ class PacientesController < ApplicationController
   # GET /pacientes.json
   def index
     
-    if params[:char].nil?
+    if params[:char].nil? and params[:busqueda].nil?
       @pacientes = Paciente.all
-    elsif
+    elsif params[:busqueda].nil?
       @pacientes = Paciente.where("apellido1 = ?", params[:char])
+    else
+      @pacientes = Paciente.where("apellido1 = ? OR apellido2 = ?", params[:busqueda], params[:busqueda])
     end
 
     respond_to do |format|
