@@ -19,6 +19,7 @@
     <th bgcolor="#0099FF" scope="col">Cedula</th>
     <th bgcolor="#0099FF" scope="col">Genero</th>
     <th bgcolor="#0099FF" scope="col">Fecha De Nacimiento</th>
+    <th bgcolor="#0099FF" scope="col">Mas Detalles</th>
   </tr>
 
 
@@ -32,9 +33,7 @@
      <td><%= paciente.cedula %></td>
     <td><%= paciente.genero %></td>
     <td><%= paciente.fecha_nacimiento %></td>
-    <td><%= link_to 'Show', paciente %></td>
-    <td><%= link_to 'Edit', edit_paciente_path(paciente) %></td>
-    <td><%= link_to 'Destroy', paciente, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Mostrar', paciente %></td>
   </tr>
 <% end %>
 </table>
