@@ -2,8 +2,16 @@ class ExpedientesController < ApplicationController
   # GET /expedientes
   # GET /expedientes.json
   def index
-    @expedientes = Expediente.all
     
+    if params[:char].nil? and params[:busqueda].nil?
+      @expedientes = Expediente.all
+    elsif  params[:busqueda].nil?  
+      @expedientes = Expediente.joins(:pacientes).where("apellido1 LIKE ?", "#{params[:char]}%")
+    else
+      @busqueda = "%#{params[:busqueda]}%"
+      @expedientes = Expediente.joins(:pacientes).where("tipo_expediente LIKE ? OR tipo_familia LIKE ? OR apellido1 LIKE ? OR apellido2 LIKE ? OR nombre LIKE ?", @busqueda, @busqueda, @busqueda, @busqueda, @busqueda)
+      
+    end
 
     respond_to do |format|
       format.html # index.html.erb

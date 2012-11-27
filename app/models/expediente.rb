@@ -5,6 +5,10 @@ class Expediente < ActiveRecord::Base
   EXPEDIENTE_INDIVIDUAL = :individual
   EXPEDIENTE_GRUPAL = :grupal
   
+  def individual?
+    tipo_expediente.to_s == EXPEDIENTE_INDIVIDUAL.to_s
+  end
+  
   
   
 end

@@ -1,12 +1,17 @@
-<h1 class="head">Expediente de <%= @expediente.tipo_expediente %></h1>
+<%if @expediente.individual?%>
+<h1 class="head"> <%= @expediente.pacientes.first.nombre_completo %> (<%= @expediente.tipo_expediente %>, número: <%=@expediente.id%>)</h1>
+<%else%>
+<h1 class="head"> Expediente Grupal (número: <%=@expediente.id%>)</h1>
+<%end%>
 
-<div id=divbody>
 <p id="notice"><%= notice %></p>
 
 
+
 <p>
-  <b>Tipo expediente:</b>
-  <%= @expediente.tipo_expediente %>
+  <b>Tratante: </b>
+  Tratante
+  
 </p>
 
 <p>
@@ -19,8 +24,15 @@
   <%= @expediente.tipo_familia %>
 </p>
 
+<p>
+  <b>Motivos de Consulta: </b>
+  motivos de consulta
+</p>
 
 
-<%= link_to 'Edit', edit_expediente_path(@expediente) %> |
-<%= link_to 'Back', expedientes_path %>
-<div/>
+
+
+
+<%= link_to 'Modificar', edit_expediente_path(@expediente) %> |
+<%= link_to 'Regresar', expedientes_path %>
+
