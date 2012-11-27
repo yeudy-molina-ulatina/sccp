@@ -25,7 +25,8 @@ class MotivosConsultaController < ApplicationController
   # GET /motivos_consulta/new.json
   def new
     @motivo_consulta = MotivoConsulta.new
-
+    @pacientes = Paciente.all(:order => [:apellido1,:apellido2,:nombre])
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @motivo_consulta }
@@ -35,6 +36,7 @@ class MotivosConsultaController < ApplicationController
   # GET /motivos_consulta/1/edit
   def edit
     @motivo_consulta = MotivoConsulta.find(params[:id])
+    @pacientes = Paciente.all(:order => [:apellido1,:apellido2,:nombre])
   end
 
   # POST /motivos_consulta

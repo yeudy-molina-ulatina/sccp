@@ -39,8 +39,12 @@
  
 <% @motivos_consulta.each do |motivo_consulta| %>
   <tr>
-    <td><%= motivo_consulta.paciente %></td>
-	<td><%= motivo_consulta.expediente %></td>
+    <td>
+    	<% motivo_consulta.expediente.pacientes.each do |paciente| %>
+			<%= paciente.nombre_completo %><br/>
+    	<% end %>
+    </td>
+	<td><%= motivo_consulta.expediente.id %></td>
 	<td><%= motivo_consulta.motivo_inicial %></td>
     <td><%= motivo_consulta.estado %></td>
     <td><%= motivo_consulta.fecha_inicio %></td>

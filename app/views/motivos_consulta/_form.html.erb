@@ -10,11 +10,13 @@
       </ul>
     </div>
   <% end %>
+    
+  <div class="field">
+    <%= f.label :paciente %><br />
+    <%= f.collection_select :expediente_id, @pacientes, :expediente_individual_id, :nombre_completo %>
+  </div>    
 
-  
-  <div0>
-  
-   <div class="field">
+  <div class="field">
     <%= f.label :motivo_inicial %><br />
     <%= f.text_field :motivo_inicial %>
   </div>
@@ -30,10 +32,8 @@
     <%= f.label :estado %><br />
     <%= f.text_field :estado %>
   </div>
-  </div0>
   
   
-  <div1>
   <div class="field">
     <%= f.label :fecha_inicio %><br />
     <%= f.date_select :fecha_inicio %>
@@ -46,17 +46,10 @@
     <%= f.label :nivel_importancia %><br />
     <%= f.text_field :nivel_importancia %>
   </div>
-  <div class="field">
-    <%= f.label :expediente %><br />
-    <%= f.text_field :expediente %>
-  </div>
-  </div>
-   
   
   <div class="actions">
     <%= f.submit %>
   </div>
-  </div1>
   
   
 <% end %>
