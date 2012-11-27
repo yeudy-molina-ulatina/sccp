@@ -4,4 +4,7 @@ class Expediente < ActiveRecord::Base
   
   EXPEDIENTE_INDIVIDUAL = :individual
   EXPEDIENTE_GRUPAL = :grupal
+  
+  
+  
 end
