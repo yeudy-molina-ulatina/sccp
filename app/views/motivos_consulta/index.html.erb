@@ -1,20 +1,19 @@
 <h1>Lista de Espera</h1>
 <body>
-<div align="center">
-<div method="get" action="">
-  Buscar: <%= search_field_tag 'nombre' %>
-</div>
-</div>
+
+  <%= form_tag motivos_consulta_path, :id => "form_buscar", :method => :get do%>
+    	Buscar: <%= search_field_tag 'busqueda' %> 
+  		<%= submit_tag 'Buscar', :id => 'submit_buscar' %> 
+  	<% end %> 
+
+
  </br>
  
  <div align="center">
-<p><a href="#">A</a> <a href="#">B</a> <a href="#">C</a> <a href="#">D</a> <a href="#">E</a> <a href="#">F</a> <a href="#">G</a> <a href="#">H</a> <a href="#">I</a> <a href="#">J</a> <a href="#">K</a> 
-	<a href="#">L</a> <a href="#">M</a> <a href="#">N</a> <a href="#">N</a> <a href="#">O</a> <a href="#">P</a> <a href="#">Q</a> <a href="#">R</a> <a href="#">S</a> <a href="#">T</a> <a href="#">U</a>
-	 <a href="#">V</a> 
-	 <a href="#">W</a> 
-	 <a href="#">X</a> 
-	 <a href="#">Y</a> 
-	 <a href="#">Z</a>
+<p>
+	<% for char in 'A'..'Z' %>
+		<%= link_to char, motivos_consulta_path(:char => char) %>
+	<% end %> 
 	 
 </p>
 	 </div>
@@ -31,9 +30,7 @@
 	<th bgcolor="lightblue" scope="col">Estado</th>
     <th bgcolor="lightblue" scope="col">Fecha inicio</th>
     <th bgcolor="lightblue" scope="col">Nivel importancia</th>
-	<th bgcolor="white" scope="col"> Mostrar</th>
-	<th bgcolor="white" scope="col"> Editar </th>
-	<th bgcolor="white" scope="col"> Eliminar </th>
+    <th bgcolor="lightblue" scope="col">Más detalles</th>  
   </tr>
    
  
@@ -50,8 +47,7 @@
     <td><%= motivo_consulta.fecha_inicio %></td>
     <td><%= motivo_consulta.nivel_importancia %></td>
 	<td><%= link_to 'Mostrar', motivo_consulta, :method => :get %></td>
-   	<td><%= link_to 'Editar', edit_motivo_consulta_path(motivo_consulta) %></td>
-    <td><%= link_to 'Eliminar', motivo_consulta, confirm: 'Are you sure?', method: :delete %></td>
+   
   </tr>
 <% end %>
 </table>
