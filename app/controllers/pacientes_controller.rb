@@ -6,9 +6,10 @@ class PacientesController < ApplicationController
     if params[:char].nil? and params[:busqueda].nil?
       @pacientes = Paciente.all
     elsif params[:busqueda].nil?
-      @pacientes = Paciente.where("apellido1 = ?", params[:char])
+      @pacientes = Paciente.where("apellido1 LIKE ?", "#{params[:char]}%")
     else
-      @pacientes = Paciente.where("apellido1 = ? OR apellido2 = ?", params[:busqueda], params[:busqueda])
+      @busqueda = "%#{params[:busqueda]}%"
+      @pacientes = Paciente.where("apellido1 LIKE ? OR apellido2 LIKE ? OR nombre LIKE ?", @busqueda, @busqueda, @busqueda)
     end
 
     respond_to do |format|
