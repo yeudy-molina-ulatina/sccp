@@ -9,7 +9,7 @@ class PacientesController < ApplicationController
       @pacientes = Paciente.where("apellido1 LIKE ?", "#{params[:char]}%")
     else
       @busqueda = "%#{params[:busqueda]}%"
-      @pacientes = Paciente.where("apellido1 LIKE ? OR apellido2 LIKE ? OR nombre LIKE ?", @busqueda, @busqueda, @busqueda)
+      @pacientes = Paciente.where("apellido1 LIKE ? OR apellido2 LIKE ? OR nombre LIKE ? OR cedula LIKE ?", @busqueda, @busqueda, @busqueda, @busqueda)
     end
 
     respond_to do |format|
@@ -53,10 +53,10 @@ class PacientesController < ApplicationController
 
     respond_to do |format|
       if @paciente.save
-        format.html { redirect_to @paciente, notice: 'Paciente was successfully created.' }
+        format.html { redirect_to @paciente, notice: 'Paciente creado satisfactoriamente.' }
         format.json { render json: @paciente, status: :created, location: @paciente }
       else
-        format.html { render action: "new" }
+        format.html { render action: "Nuevo" }
         format.json { render json: @paciente.errors, status: :unprocessable_entity }
       end
     end
@@ -69,10 +69,10 @@ class PacientesController < ApplicationController
 
     respond_to do |format|
       if @paciente.update_attributes(params[:paciente])
-        format.html { redirect_to @paciente, notice: 'Paciente was successfully updated.' }
+        format.html { redirect_to @paciente, notice: 'Paciente modificado satisfactoriamente.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render action: "Editar" }
         format.json { render json: @paciente.errors, status: :unprocessable_entity }
       end
     end
