@@ -6,11 +6,9 @@
 
 <p>
 	<% for char in 'A'..'Z' %>
-	<a href="#"><%= char%></a>
-	
-<% end %> 
-
-	 </p>
+		<%= link_to char, pacientes_path(:char => char) %>
+	<% end %> 
+</p>
 
 <table>
 <table width="700" height="50" border="1">
