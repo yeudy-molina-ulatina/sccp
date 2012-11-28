@@ -1,5 +1,8 @@
 <h1>Nuevo Motivo de Consulta</h1>
 
-<%= render 'form' %>
+	<%= render 'form' %>
+ 
+ 	<%= button_to 'Nuevo Paciente', new_paciente_path, :method => :get %>
+ 	
+ 	<%= link_to 'Regresar', motivos_consulta_path %>
 
-<%= link_to 'Regresar', motivos_consulta_path %>

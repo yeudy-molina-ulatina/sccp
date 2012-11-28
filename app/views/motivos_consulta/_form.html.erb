@@ -10,6 +10,7 @@
       </ul>
     </div>
   <% end %>
+  
     
   <div class="field">
     <%= f.label :paciente %><br />
@@ -28,13 +29,13 @@
     <%= f.label :derivacion %><br />
     <%= f.text_field :derivacion %>
   </div>
+  
   <div class="field">
     <%= f.label :estado %><br />
     <%= f.text_field :estado %>
   </div>
   
-  
-  <div class="field">
+    <div class="field">
     <%= f.label :fecha_inicio %><br />
     <%= f.date_select :fecha_inicio %>
   </div>
@@ -42,13 +43,15 @@
     <%= f.label :fecha_fin %><br />
     <%= f.date_select :fecha_fin %>
   </div>
+  
   <div class="field">
     <%= f.label :nivel_importancia %><br />
-    <%= f.text_field :nivel_importancia %>
+    <%= select_tag "motivo_cosulta[nivel_importancia]", options_for_select(%w{ Bajo Medio Alto Urgente}), :prompt => "Seleccione" %> 
   </div>
   
-  <div class="actions">
+    <div class="actions">
     <%= f.submit %>
+  
   </div>
   
   

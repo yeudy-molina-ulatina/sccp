@@ -7,4 +7,7 @@ class MotivoConsulta < ActiveRecord::Base
   ESTADO_ABANDONADO = :abandonado
   ESTADO_CERRADO = :cerrado
   
+  def inactivo?
+    estado.to_s == ESTADO_INACTIVO.to_s
+  end
 end

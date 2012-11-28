@@ -52,10 +52,10 @@ class MotivosConsultaController < ApplicationController
   # POST /motivos_consulta.json
   def create
     @motivo_consulta = MotivoConsulta.new(params[:motivo_consulta])
-
+        
     respond_to do |format|
       if @motivo_consulta.save
-        format.html { redirect_to @motivo_consulta, notice: 'Motivo consulta was successfully created.' }
+        format.html { redirect_to @motivo_consulta, notice: 'Motivo de consulta fue creado exitosamente.' }
         format.json { render json: @motivo_consulta, status: :created, location: @motivo_consulta }
       else
         format.html { render action: "new" }
@@ -71,7 +71,7 @@ class MotivosConsultaController < ApplicationController
 
     respond_to do |format|
       if @motivo_consulta.update_attributes(params[:motivo_consulta])
-        format.html { redirect_to @motivo_consulta, notice: 'Motivo consulta was successfully updated.' }
+        format.html { redirect_to @motivo_consulta, notice: 'Motivo de consulta fue actualizado exitosamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
