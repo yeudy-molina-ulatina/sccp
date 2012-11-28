@@ -18,11 +18,11 @@
   <div1 >
   <div>
     <%= f.label "Nombre:" %> 
-   <%= f.text_field :nombre %>
+   <%= f.text_field :nombre, :size => "13x1" %>
    <%= f.label "Apellido 1:" %> 
-   <%= f.text_field :apellido1 %>
+   <%= f.text_field :apellido1, :size => "13x1" %>
    <%= f.label "Apellido 2:" %> 
-   <%= f.text_field :apellido2 %>
+   <%= f.text_field :apellido2, :size => "13x1" %>
   </div>
       
   <div class="field">
@@ -37,7 +37,7 @@
   
   <div class="field">
     <%= f.label "Genero:" %>
-	<%= select_tag "paciente[genero]", options_for_select(%w{ Masculino Femenino}), :prompt => "Seleccione" %>
+	<%= select_tag "paciente[genero]", options_for_select(["Masculino", "Femenino"], :selected => params[:genero]), :prompt => "Seleccione" %>
  </div>
   
   <div class="field">
@@ -54,9 +54,9 @@
 <div2>  
   <div class="field">
     <%= f.label "Teléfono casa:" %>
-    <%= f.text_field :telefono_casa %>
+    <%= f.text_field :telefono_casa, :size => "13x1" %>
 	<%= f.label "Teléfono celular:" %>
-    <%= f.text_field :telefono_celular %>
+    <%= f.text_field :telefono_celular, :size => "13x1" %>
 	<%= f.label "Correo electrónico:" %>
     <%= f.text_field :correo_electronico %>
   </div>
@@ -86,7 +86,7 @@
     
   <div class="field">
     <%= f.label "Otras señas:" %>
-    <%= text_area_tag "paciente[otras_senas]", nil, :size => "155x5" %>
+    <%= f.text_area :otras_senas, :size => "130x5" %>
   </div>
 </div4>
   
