@@ -12,7 +12,7 @@ class ExpedientesController < ApplicationController
       @expedientes = Expediente.joins(:pacientes).where("tipo_expediente LIKE ? OR tipo_familia LIKE ? OR apellido1 LIKE ? OR apellido2 LIKE ? OR nombre LIKE ?", @busqueda, @busqueda, @busqueda, @busqueda, @busqueda)
       
     end
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @expedientes }
@@ -48,6 +48,11 @@ class ExpedientesController < ApplicationController
   # GET /expedientes/1/edit
   def edit
     @expediente = Expediente.find(params[:id])
+  end
+  
+  def new
+    @expedientes = Expediente.all
+    
   end
 
   # POST /expedientes

@@ -1,7 +1,23 @@
 <h1 class="head">Nuevo expediente</h1>
 
 <div id="divbody">
-<%= render 'form' %>
+ <select name="Agregar paciente" class="comboBox">
+ 	<% @expedientes.each do |expediente| %>
+ 	  <%if expediente.individual?%>
+ 	    <% expediente.pacientes.each do |paciente| %>
+ 	    
+ 	      <option value=126><%= paciente.nombre_completo %></option>
+ 	    <%end%>
+ 	  <%end%>  
+ 	<%end%>
+ 	
+  </select>
+  
+  <%= submit_tag 'Agrupar Paciente', :id => 'submit_add' %> 
+ 
+
+
+
 <div/>
 
 <%= link_to 'Regresar', expedientes_path %>
