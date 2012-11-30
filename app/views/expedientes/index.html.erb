@@ -1,23 +1,22 @@
-<div id=divhead>
-<h1 class="head">Listado de expedientes</h1>
-<div/>
+
+	<h1 class="head">Listado de expedientes</h1>
 
 	
-		<%= form_tag expedientes_path, :id => "form_buscar", :method => :get do%>
-    	Buscar: <%= search_field_tag 'busqueda' %> 
-  		<%= submit_tag 'Buscar', :id => 'submit_buscar' %> 
-  	<% end %> 
-	
 
-  <br>
-  <p>
-	<% for char in 'A'..'Z' %>
+	<%= form_tag expedientes_path, :id => "form_buscar", :method => :get do%>
+	Buscar: <%= search_field_tag 'busqueda' %>
+	<%= submit_tag 'Buscar', :id => 'submit_buscar' %>
+	<% end %>
+
+	<br>
+	<p>
+		<% for char in 'A'..'Z' %>
 		<%= link_to char, expedientes_path(:char => char) %>
-	<% end %> 
-</p>
+		<% end %>
+	</p>
 
 
-<div id=divbody>
+
 <table>
   <tr>
   	
@@ -49,7 +48,7 @@
   </tr>
 <% end %>
 </table>
-<div/>
+
 <br />
 <p class="footer">
 <%= link_to 'Crear nuevo expediente grupal', new_expediente_path %>

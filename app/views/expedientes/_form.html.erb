@@ -11,17 +11,41 @@
     </div>
   <% end %>
 
+
+
+	
+ <%texts = Array.new
+   @expedientes.each do |expediente|
+    	if expediente.individual?
+    	  aux = Array.new
+   		  expediente.pacientes.each do |paciente|
+   			aux.push paciente.nombre_completo
+   			aux.push paciente.id
+   			texts.push aux
+   		  end
+    	end
+   end
+ %>
+	
+<%= select_tag "expediente[paciente]", options_for_select(texts, :expediente => params[:paciente]), :prompt => "Elija el paciente que desea agrupar" %>
+
+	<%= submit_tag 'Agrupar Paciente', :id => 'add' %>
+
+
+
+
+   <div class="field">
+    <b><%= f.label :tipo_expediente %></b><br />
+    <%= f.text_field :tipo_expediente, :value => Expediente::EXPEDIENTE_GRUPAL, :readonly => true %>
+  </div>
+
   <div class="field">
-    <%= f.label :tipo_expediente %><br />
-    <%= f.text_field :tipo_expediente %>
+    <b><%= f.label :fecha_creacion %></b><br />
+    <%= f.text_field :fecha_creacion, :value => Date.today, :readonly => true%>
   </div>
   <div class="field">
-    <%= f.label :fecha_creacion %><br />
-    <%= f.date_select :fecha_creacion %>
-  </div>
-  <div class="field">
-    <%= f.label :tipo_familia %><br />
-    <%= f.text_field :tipo_familia %>
+    <b><%= f.label :tipo_familia %></b><br />
+    <%= select_tag "expediente[tipo_familia]", options_for_select(["(HTX) Heterosexual", "(HX) Homosexual","(LX) Lesvica"], :selected => params[:tipo_familia]), :prompt => "Elija el tipo de familia" %>
   </div>
   <div class="actions">
     <%= f.submit %>

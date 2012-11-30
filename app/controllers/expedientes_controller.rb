@@ -2,25 +2,21 @@ class ExpedientesController < ApplicationController
   # GET /expedientes
   # GET /expedientes.json
   def index
-    
+
     if params[:char].nil? and params[:busqueda].nil?
       @expedientes = Expediente.all
-    elsif  params[:busqueda].nil?  
+    elsif  params[:busqueda].nil?
       @expedientes = Expediente.joins(:pacientes).where("apellido1 LIKE ?", "#{params[:char]}%")
     else
       @busqueda = "%#{params[:busqueda]}%"
       @expedientes = Expediente.joins(:pacientes).where("tipo_expediente LIKE ? OR tipo_familia LIKE ? OR apellido1 LIKE ? OR apellido2 LIKE ? OR nombre LIKE ?", @busqueda, @busqueda, @busqueda, @busqueda, @busqueda)
-      
+
     end
-    
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @expedientes }
     end
-  end
-  
-  def get_paciente
-   # voy acá !!!!
   end
 
   # GET /expedientes/1
@@ -37,6 +33,7 @@ class ExpedientesController < ApplicationController
   # GET /expedientes/new
   # GET /expedientes/new.json
   def new
+    @expedientes = Expediente.all
     @expediente = Expediente.new
 
     respond_to do |format|
@@ -48,11 +45,6 @@ class ExpedientesController < ApplicationController
   # GET /expedientes/1/edit
   def edit
     @expediente = Expediente.find(params[:id])
-  end
-  
-  def new
-    @expedientes = Expediente.all
-    
   end
 
   # POST /expedientes
