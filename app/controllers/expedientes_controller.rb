@@ -50,17 +50,21 @@ class ExpedientesController < ApplicationController
   # POST /expedientes
   # POST /expedientes.json
   def create
+    
+ 
+    
     @expediente = Expediente.new(params[:expediente])
 
     respond_to do |format|
       if @expediente.save
-        format.html { redirect_to @expediente, notice: 'Expediente was successfully created.' }
+        format.html { redirect_to @expediente, notice: 'El Expediente fue creado exitosamente.' }
         format.json { render json: @expediente, status: :created, location: @expediente }
       else
         format.html { render action: "new" }
         format.json { render json: @expediente.errors, status: :unprocessable_entity }
       end
     end
+    
   end
 
   # PUT /expedientes/1

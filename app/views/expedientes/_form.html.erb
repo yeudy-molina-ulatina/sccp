@@ -29,7 +29,36 @@
 	
 <%= select_tag "expediente[paciente]", options_for_select(texts, :expediente => params[:paciente]), :prompt => "Elija el paciente que desea agrupar" %>
 
-	<%= submit_tag 'Agrupar Paciente', :id => 'add' %>
+	<%= button_to 'Agrupar Paciente', :name => "agregar", :to => nil, :confirm => "Se agregara el paciente"%>
+	
+	<table>
+  <tr>
+  	
+  	<th class="custom"> Id </th>
+    <th class="custom"> Nombre del Paciente </th>
+    <th class="custom"> Tratante </th>
+
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<%i=1 
+ @expedientes.each do |expediente| %>
+
+
+  <tr>
+  	<td class="custom"> Id </td>
+        <td class="custom"> Paciente <%=i%> en grupo </td>
+      <%i = i+1 %>
+    <td class="custom"> tratante </td>
+    <td>                    </td>
+    <td><%= link_to ' Ver ', nil , confirm:'Aqui se desplegara la informacion del paciente' %></td>
+    <td>                    </td>
+    <td><%= link_to ' Quitar del grupo ', nil ,  confirm: 'Seguro que desea quitarlo del grupo?'%></td>
+  </tr>
+
+<% end %>
+</table>
 
 
 
