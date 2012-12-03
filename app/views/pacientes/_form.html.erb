@@ -36,8 +36,8 @@
   </div>
   
   <div class="field">
-    <%= f.label "Genero:" %>
-	<%= select_tag "paciente[genero]", options_for_select(["Masculino", "Femenino"], :selected => params[:genero]), :prompt => "Seleccione" %>
+    <%= f.label "Género:" %>
+	<%= f.select :genero, options_for_select(["Masculino", "Femenino"], :selected => @paciente.genero), :prompt => "Seleccione" %>
  </div>
   
   <div class="field">
@@ -47,7 +47,7 @@
   
   <div class="field">
     <%= f.label "Estado Civil: " %>
-    <%= select_tag "paciente[estado_civil]", options_for_select(%w{ Soltero/a  Casado/a Divorciado/a Viudo/a Union_Libre}), :prompt => "Seleccione" %>
+    <%= f.select :estado_civil, options_for_select(%w{ Soltero/a  Casado/a Divorciado/a Viudo/a Union_Libre}, :selected => @paciente.estado_civil), :prompt => "Seleccione" %>
   </div>
  </div1>   
  
@@ -76,7 +76,7 @@
 <div4>  
   <div class="field">
     <%= f.label "Provincia:" %>
-    <%= select_tag "paciente[provincia]", options_for_select(%w{ Alajuela  Cartago Guanacaste Heredia Limón Puntarenas San_José}), :prompt => "Seleccione" %>
+    <%= f.select :provincia, options_for_select(%w{ Alajuela  Cartago Guanacaste Heredia Limón Puntarenas San_José}, :selected => @paciente.provincia), :prompt => "Seleccione" %>
 	<%= f.label "Cantón:" %>
     <%= f.text_field :canton %>
 	<%= f.label "Distrito:" %>
