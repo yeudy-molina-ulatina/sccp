@@ -5,7 +5,9 @@ Sccp::Application.routes.draw do
 
   resources :motivos_consulta
 
-  resources :expedientes
+  resources :expedientes do
+    resources :motivos_consulta
+  end
 
   resources :pacientes
 

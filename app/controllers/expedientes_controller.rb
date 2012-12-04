@@ -23,6 +23,7 @@ class ExpedientesController < ApplicationController
   # GET /expedientes/1.json
   def show
     @expediente = Expediente.find(params[:id])
+    @motivos_consulta = MotivoConsulta.where(:expediente_id => params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
