@@ -1,11 +1,14 @@
 Sccp::Application.routes.draw do
+<<<<<<< HEAD
   resources :citas
 
   get "clinica/index"
 
   resources :motivos_consulta
 
-  resources :expedientes
+  resources :expedientes do
+    resources :motivos_consulta
+  end
 
   resources :pacientes
 
