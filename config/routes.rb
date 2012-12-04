@@ -1,6 +1,8 @@
 Sccp::Application.routes.draw do
-<<<<<<< HEAD
+
   resources :citas
+
+  get "lista_espera/index"
 
   get "clinica/index"
 
