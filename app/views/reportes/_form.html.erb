@@ -1,0 +1,45 @@
+<%= form_for(@reporte) do |f| %>
+  <% if @reporte.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reporte.errors.count, "error") %> prohibited this reporte from being saved:</h2>
+
+      <ul>
+      <% @reporte.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :temas_discutidos %><br />
+    <%= f.text_area :temas_discutidos %>
+  </div>
+  <div class="field">
+    <%= f.label :actividades_realizadas %><br />
+    <%= f.text_area :actividades_realizadas %>
+  </div>
+  <div class="field">
+    <%= f.label :acuerdos %><br />
+    <%= f.text_area :acuerdos %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo %><br />
+    <%= f.text_field :tipo %>
+  </div>
+  <div class="field">
+    <%= f.label :tratamiento %><br />
+    <%= f.text_area :tratamiento %>
+  </div>
+  <div class="field">
+    <%= f.label :diagnostico %><br />
+    <%= f.text_field :diagnostico %>
+  </div>
+  <div class="field">
+    <%= f.label :cita %><br />
+    <%= f.text_field :cita %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

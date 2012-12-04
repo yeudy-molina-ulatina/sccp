@@ -24,7 +24,7 @@ class MotivosConsultaController < ApplicationController
   # GET /motivos_consulta/1.json
   def show
     @motivo_consulta = MotivoConsulta.find(params[:id])
-
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @motivo_consulta }

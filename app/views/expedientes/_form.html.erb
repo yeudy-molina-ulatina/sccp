@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-
+<br><br>
 
 	
  <%texts = Array.new
@@ -29,9 +29,11 @@
 	
 <%= select_tag "expediente[paciente]", options_for_select(texts, :expediente => params[:paciente]), :prompt => "Elija el paciente que desea agrupar" %>
 
-	<%= button_to 'Agrupar Paciente', :name => "agregar", :to => nil, :confirm => "Se agregara el paciente"%>
+	<%= submit_tag 'Agrupar Paciente', :type => 'button', :name => "agregar", :onclick => 'alert("Aquí se agrega el paciente a la tabla")'%>
 	
-	<br>
+	
+	
+	<br><br>
 	
 	<table class="list_resourses">
   <tr>
@@ -54,7 +56,7 @@
       <%i = i+1 %>
     <td > tratante </td>
     <td>                    </td>
-    <td><%= link_to ' Ver ', nil , confirm:'Aqui se desplegara la informacion del paciente' %></td>
+    <td><%= link_to ' Ver ', nil , confirm: (expediente.pacientes.first::nombre_completo + "\nExpediente número: " + expediente.pacientes.first::id.to_s) %></td>
     <td>                    </td>
     <td><%= link_to ' Quitar del grupo ', nil ,  confirm: 'Seguro que desea quitarlo del grupo?'%></td>
   </tr>
@@ -62,7 +64,7 @@
 <% end %>
 </table>
 
-<br>
+<br><br>
 
 
 
@@ -70,15 +72,17 @@
     <b><%= f.label :tipo_expediente %></b><br />
     <%= f.text_field :tipo_expediente, :value => Expediente::EXPEDIENTE_GRUPAL, :readonly => true %>
   </div>
-
+  <br>
   <div class="field">
     <b><%= f.label :fecha_creacion %></b><br />
     <%= f.text_field :fecha_creacion, :value => Date.today, :readonly => true%>
   </div>
+  <br>
   <div class="field">
     <b><%= f.label :tipo_familia %></b><br />
     <%= select_tag "expediente[tipo_familia]", options_for_select(["(HTX) Heterosexual", "(HX) Homosexual","(LX) Lesvica"], :selected => params[:tipo_familia]), :prompt => "Elija el tipo de familia" %>
   </div>
+  <br>
   <div class="actions">
     <%= f.submit %>
   </div>

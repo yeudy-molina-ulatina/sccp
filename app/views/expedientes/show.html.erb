@@ -1,5 +1,5 @@
 <%if @expediente.individual?%>
-<h1> <%= @expediente.pacientes.first.nombre_completo %> </h1>
+<h1 class="link"> <%= link_to @expediente.pacientes.first.nombre_completo, @expediente.pacientes.first %> </h1>
 <%else%>
 <h1> Expediente Grupal </h1>
 <%end%>
