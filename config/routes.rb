@@ -4,7 +4,7 @@ Sccp::Application.routes.draw do
 
   resources :citas
 
-  get "lista_espera/index"
+  get "lista_espera/index", :as => :lista_espera
 
   get "clinica/index"
 
