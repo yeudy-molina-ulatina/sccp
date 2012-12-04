@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Temas discutidos:</b>
+  <%= @reporte.temas_discutidos %>
+</p>
+
+<p>
+  <b>Actividades realizadas:</b>
+  <%= @reporte.actividades_realizadas %>
+</p>
+
+<p>
+  <b>Acuerdos:</b>
+  <%= @reporte.acuerdos %>
+</p>
+
+<p>
+  <b>Tipo:</b>
+  <%= @reporte.tipo %>
+</p>
+
+<p>
+  <b>Tratamiento:</b>
+  <%= @reporte.tratamiento %>
+</p>
+
+<p>
+  <b>Diagnostico:</b>
+  <%= @reporte.diagnostico %>
+</p>
+
+<p>
+  <b>Cita:</b>
+  <%= @reporte.cita %>
+</p>
+
+
+<%= link_to 'Edit', edit_reporte_path(@reporte) %> |
+<%= link_to 'Back', reportes_path %>

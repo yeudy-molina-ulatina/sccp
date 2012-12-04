@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  temas_discutidos: MyText
+  actividades_realizadas: MyText
+  acuerdos: MyText
+  tipo: MyString
+  tratamiento: MyText
+  diagnostico: MyString
+  cita: 
+
+two:
+  temas_discutidos: MyText
+  actividades_realizadas: MyText
+  acuerdos: MyText
+  tipo: MyString
+  tratamiento: MyText
+  diagnostico: MyString
+  cita: 

@@ -75,8 +75,20 @@
     <th bgcolor="white" scope="col">Diagnóstico</th>
 	<th bgcolor="white" scope="col">Tratamiento</th>
     <th bgcolor="white" scope="col">Temas Discutidos</th>
-    
+    <th bgcolor="white" scope="col">Mas Detalles</th>
   	</tr>
+  	
+  	<% @motivo_consulta.citas.each do |cita| %>
+  		<tr>
+				<td><%= cita.fecha %></td>
+				<td>Tratante</td>
+		    	<td>Diagnóstico</td>
+		    	<td>Tratamiento</td>
+		    	<td>Temas Discutidos</td>
+				<td><%= link_to 'Mostrar', cita, :method => :get %></td>
+  		</tr>
+	<% end %>
+  	
    </table>
    </div>
    
@@ -84,4 +96,5 @@
     <br />	 
 
 	<%= link_to 'Editar', edit_motivo_consulta_path(@motivo_consulta) %> |
-	<%= link_to 'Regresar', motivos_consulta_path %>
+	<%= link_to 'Regresar', '/lista_espera/index' %>
+

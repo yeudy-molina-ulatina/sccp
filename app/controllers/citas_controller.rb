@@ -38,7 +38,7 @@ class CitasController < ApplicationController
   # GET /citas/1/edit
   def edit
     @cita = Cita.find(params[:id])
-    @pacientes = Paciente.all(:order => [:apellido1,:apellido2,:nombre])
+    @motivos_consulta = MotivoConsulta.where("estado = ?", MotivoConsulta::ESTADO_INACTIVO)
   end
 
   # POST /citas

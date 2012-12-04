@@ -1,5 +1,7 @@
 Sccp::Application.routes.draw do
 
+  resources :reportes
+
   resources :citas
 
   get "lista_espera/index"
@@ -8,9 +10,7 @@ Sccp::Application.routes.draw do
 
   resources :motivos_consulta
 
-  resources :expedientes do
-    resources :motivos_consulta
-  end
+  resources :expedientes
 
   resources :pacientes
 
