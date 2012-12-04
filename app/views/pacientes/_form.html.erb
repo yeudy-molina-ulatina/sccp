@@ -16,11 +16,11 @@
   
   <div class="field">
     <%= f.label "Nombre:" %> 
-   	<%= f.text_field :nombre %>
-   	<%= f.label "Apellido 1:" %> 
-   	<%= f.text_field :apellido1 %>
-   	<%= f.label "Apellido 2:" %> 
-   	<%= f.text_field :apellido2 %>
+   <%= f.text_field :nombre, :size => "13x1" %>
+   <%= f.label "Apellido 1:" %> 
+   <%= f.text_field :apellido1, :size => "13x1" %>
+   <%= f.label "Apellido 2:" %> 
+   <%= f.text_field :apellido2, :size => "13x1" %>
   </div>
       
   <div class="field">
@@ -34,8 +34,8 @@
   </div>
   
   <div class="field">
-    <%= f.label "Genero:" %>
-	<%= select_tag "paciente[genero]", options_for_select(%w{ Masculino Femenino}) %>
+    <%= f.label "Género:" %>
+	<%= f.select :genero, options_for_select(["Masculino", "Femenino"], :selected => @paciente.genero), :prompt => "Seleccione" %>
  </div>
   
   <div class="field">
@@ -45,22 +45,14 @@
   
   <div class="field">
     <%= f.label "Estado Civil: " %>
-    <%= f.text_field :estado_civil %>
-	<select>
-	<option>Soltero/a</option>
-      <option>Casado/a</option>
-      <option>Divorciado/a</option>
-      <option>Viudo/a</option>
-      <option>Union libre</option>
-      <option>Separado/a</option>
-    </select>
+    <%= f.select :estado_civil, options_for_select(%w{ Soltero/a  Casado/a Divorciado/a Viudo/a Union_Libre}, :selected => @paciente.estado_civil), :prompt => "Seleccione" %>
   </div>
  
   <div class="field">
     <%= f.label "Teléfono casa:" %>
-    <%= f.text_field :telefono_casa %>
+    <%= f.text_field :telefono_casa, :size => "13x1" %>
 	<%= f.label "Teléfono celular:" %>
-    <%= f.text_field :telefono_celular %>
+    <%= f.text_field :telefono_celular, :size => "13x1" %>
 	<%= f.label "Correo electrónico:" %>
     <%= f.text_field :correo_electronico %>
   </div>
@@ -76,7 +68,7 @@
 
   <div class="field">
     <%= f.label "Provincia:" %>
-    <%= f.text_field :provincia %>
+    <%= f.select :provincia, options_for_select(%w{ Alajuela  Cartago Guanacaste Heredia Limón Puntarenas San_José}, :selected => @paciente.provincia), :prompt => "Seleccione" %>
 	<%= f.label "Cantón:" %>
     <%= f.text_field :canton %>
 	<%= f.label "Distrito:" %>
@@ -85,8 +77,9 @@
   
   <div class="field">
     <%= f.label "Otras señas:" %>
-    <%= f.text_area :otras_senas %>
-  </div>  
+    <%= f.text_area :otras_senas, :size => "130x5" %>
+  </div>
+  
  
   <div class="actions">
     <%= f.submit %>

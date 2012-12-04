@@ -56,7 +56,7 @@ class PacientesController < ApplicationController
         format.html { redirect_to @paciente, notice: 'Paciente creado satisfactoriamente.' }
         format.json { render json: @paciente, status: :created, location: @paciente }
       else
-        format.html { render action: "Nuevo" }
+        format.html { render action: "new" }
         format.json { render json: @paciente.errors, status: :unprocessable_entity }
       end
     end
@@ -72,7 +72,7 @@ class PacientesController < ApplicationController
         format.html { redirect_to @paciente, notice: 'Paciente modificado satisfactoriamente.' }
         format.json { head :no_content }
       else
-        format.html { render action: "Editar" }
+        format.html { render action: "edit" }
         format.json { render json: @paciente.errors, status: :unprocessable_entity }
       end
     end

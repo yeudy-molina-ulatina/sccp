@@ -47,7 +47,7 @@ class CitasController < ApplicationController
         format.html { redirect_to @cita, notice: 'Cita creada satisfactoriamente.' }
         format.json { render json: @cita, status: :created, location: @cita }
       else
-        format.html { render action: "Nuevo" }
+        format.html { render action: "new" }
         format.json { render json: @cita.errors, status: :unprocessable_entity }
       end
     end
@@ -63,7 +63,7 @@ class CitasController < ApplicationController
         format.html { redirect_to @cita, notice: 'Cita modificada satisfactoriamente.' }
         format.json { head :no_content }
       else
-        format.html { render action: "Editar" }
+        format.html { render action: "edit" }
         format.json { render json: @cita.errors, status: :unprocessable_entity }
       end
     end

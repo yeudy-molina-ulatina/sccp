@@ -9,6 +9,12 @@ class Expediente < ActiveRecord::Base
     tipo_expediente.to_s == EXPEDIENTE_INDIVIDUAL.to_s
   end
   
+  def create_grupal
+    
+    
+    
+  end
+  
   
   
 end

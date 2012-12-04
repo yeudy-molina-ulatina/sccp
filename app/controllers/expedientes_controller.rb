@@ -2,25 +2,21 @@ class ExpedientesController < ApplicationController
   # GET /expedientes
   # GET /expedientes.json
   def index
-    
+
     if params[:char].nil? and params[:busqueda].nil?
       @expedientes = Expediente.all
-    elsif  params[:busqueda].nil?  
+    elsif  params[:busqueda].nil?
       @expedientes = Expediente.joins(:pacientes).where("apellido1 LIKE ?", "#{params[:char]}%")
     else
       @busqueda = "%#{params[:busqueda]}%"
       @expedientes = Expediente.joins(:pacientes).where("tipo_expediente LIKE ? OR tipo_familia LIKE ? OR apellido1 LIKE ? OR apellido2 LIKE ? OR nombre LIKE ?", @busqueda, @busqueda, @busqueda, @busqueda, @busqueda)
-      
+
     end
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @expedientes }
     end
-  end
-  
-  def get_paciente
-   # voy acá !!!!
   end
 
   # GET /expedientes/1
@@ -37,6 +33,7 @@ class ExpedientesController < ApplicationController
   # GET /expedientes/new
   # GET /expedientes/new.json
   def new
+    @expedientes = Expediente.all
     @expediente = Expediente.new
 
     respond_to do |format|
@@ -53,17 +50,21 @@ class ExpedientesController < ApplicationController
   # POST /expedientes
   # POST /expedientes.json
   def create
+    
+ 
+    
     @expediente = Expediente.new(params[:expediente])
 
     respond_to do |format|
       if @expediente.save
-        format.html { redirect_to @expediente, notice: 'Expediente was successfully created.' }
+        format.html { redirect_to @expediente, notice: 'El Expediente fue creado exitosamente.' }
         format.json { render json: @expediente, status: :created, location: @expediente }
       else
         format.html { render action: "new" }
         format.json { render json: @expediente.errors, status: :unprocessable_entity }
       end
     end
+    
   end
 
   # PUT /expedientes/1

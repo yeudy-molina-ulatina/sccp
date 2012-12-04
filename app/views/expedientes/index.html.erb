@@ -1,4 +1,4 @@
-<h1>Lista de expedientes</h1>
+<h1 class="content_title">Lista de Expedientes</h1>
 
 	<%= form_tag expedientes_path, :id => "form_buscar", :method => :get do%>
     	Buscar: <%= search_field_tag 'busqueda' %> 
@@ -9,7 +9,7 @@
 		<%= link_to char, expedientes_path(:char => char) %>
 	<% end %> 
 
-<table>
+<table class="list_resourses">
   <tr>
   	
   	<th>Id</th>

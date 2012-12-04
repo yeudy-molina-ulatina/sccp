@@ -4,35 +4,55 @@
 <h1> Expediente Grupal (número: <%=@expediente.id%>)</h1>
 <%end%>
 
-<p id="notice"><%= notice %></p>
-
-
-
-<p>
-  <b>Tratante: </b>
-  Tratante
-  
+<p id="notice">
+	<%= notice %>
 </p>
+<div class="main">
 
-<p>
-  <b>Fecha creacion:</b> 
-  <%= @expediente.fecha_creacion %>
-</p>
+	<div class="img">
+		<%= image_tag "avatar.png" %>
+	</div>
+	<div class="datos">
 
-<p>
-  <b>Tipo familia:</b>
-  <%= @expediente.tipo_familia %>
-</p>
+		<p>
+			<b>Número de Expediente:<b> <%= @expediente.tipo_expediente %> número <%= @expediente.id%> 
+		</p>	
+		
+		<p>
+			<b>Tipo de Expediente </b>
+	
+		</p>
+		
+		<p>
+			<b>Supervisor: </b>
+			Supervisor
 
-<p>
-  <b>Motivos de Consulta: </b>
-  motivos de consulta
-</p>
+		</p>
+		<p>
+			<b>Tratante: </b>
+			Tratante
 
+		</p>
 
+		<p>
+			<b>Fecha creacion:</b>
+			<%= @expediente.fecha_creacion %>
+		</p>
 
+		<p>
+			<b>Tipo familia:</b>
+			<%= @expediente.tipo_familia %>
+		</p>
+
+		<p>
+			<b>Motivos de Consulta: </b>
+			motivos de consulta
+		</p>
+
+	</div>
+
+</div>
 
 
 <%= link_to 'Modificar', edit_expediente_path(@expediente) %> |
 <%= link_to 'Regresar', expedientes_path %>
-
