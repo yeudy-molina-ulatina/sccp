@@ -1,11 +1,11 @@
-<h1>Listing citas</h1>
+<h1 class="content_title">Citas</h1>
 
-<table>
+<table class="list_resourses">
   <tr>
     <th>Fecha</th>
     <th>Hora</th>
-    <th>Duracion</th>
-    <th>Lugar atencion</th>
+    <th>Duración</th>
+    <th>Lugar atención</th>
     <th>Motivo consulta</th>
     <th></th>
     <th></th>
@@ -18,14 +18,14 @@
     <td><%= cita.hora %></td>
     <td><%= cita.duracion %></td>
     <td><%= cita.lugar_atencion %></td>
-    <td><%= cita.motivo_consulta %></td>
-    <td><%= link_to 'Show', cita %></td>
-    <td><%= link_to 'Edit', edit_cita_path(cita) %></td>
-    <td><%= link_to 'Destroy', cita, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= cita.motivo_consulta.motivo_inicial %></td>
+    <td><%= link_to 'Mostar', cita %></td>
+    <td><%= link_to 'Editar', edit_cita_path(cita) %></td>
+    <td><%= link_to 'Eliminar', cita, confirm: '¿Esta seguro?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Cita', new_cita_path %>
+<%= button_to 'Cita nueva', new_cita_path, :method => :get  %>

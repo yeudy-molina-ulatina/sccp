@@ -53,7 +53,7 @@ class MotivosConsultaController < ApplicationController
   # POST /motivos_consulta.json
   def create
         
-   @motivo_consulta = MotivoConsulta.new(params[:motivo_consulta].merge({:estado => 'inactivo'}))   
+   @motivo_consulta = MotivoConsulta.new(params[:motivo_consulta].merge({:estado => MotivoConsulta::ESTADO_INACTIVO}))   
     respond_to do |format|
       if @motivo_consulta.save
         format.html { redirect_to @motivo_consulta, notice: 'Motivo de consulta fue creado exitosamente.' }
