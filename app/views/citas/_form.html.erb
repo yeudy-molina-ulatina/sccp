@@ -11,6 +11,14 @@
     </div>
   <% end %>
 
+  
+  <div class="field">
+    <%= f.label :paciente %><br />
+    <%= f.collection_select :motivo_consulta_id, @motivos_consulta, :id, :motivo_inicial %>
+  </div>    
+
+  
+  
   <div class="field">
     <%= f.label :fecha %><br />
     <%= f.date_select :fecha %>
@@ -27,10 +35,7 @@
     <%= f.label :lugar_atencion %><br />
     <%= f.text_field :lugar_atencion %>
   </div>
-  <div class="field">
-    <%= f.label :motivo_consulta %><br />
-    <%= f.text_field :motivo_consulta %>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
