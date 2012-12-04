@@ -44,6 +44,7 @@ class ExpedientesController < ApplicationController
 
   # GET /expedientes/1/edit
   def edit
+    @expedientes = Expediente.all
     @expediente = Expediente.find(params[:id])
   end
 

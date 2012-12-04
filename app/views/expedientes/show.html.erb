@@ -14,12 +14,12 @@
 	<div class="datos">
 
 		<p>
-			<b>Número de Expediente:<b> <%= @expediente.tipo_expediente %> número <%= @expediente.id%> 
+			<b>Expediente Número:<b><%= @expediente.id%> 
 		</p>	
 		
 		<p>
-			<b>Tipo de Expediente </b>
-	
+			<b>Tipo de Expediente: </b>
+	         <%= @expediente.tipo_expediente %>
 		</p>
 		
 		<p>
@@ -45,7 +45,12 @@
 
 		<p>
 			<b>Motivos de Consulta: </b>
-			motivos de consulta
+			<%
+			  i = 0;
+			  @expediente.motivos_consulta.each do |motivo|%>
+			  	<%= image_tag "file.png" %>
+			    
+			    <%end%>
 		</p>
 
 	</div>
