@@ -1,55 +1,39 @@
-
-	<h1 class="head">Listado de expedientes</h1>
-
-	
+<h1 class="content_title">Lista de Expedientes</h1>
 
 	<%= form_tag expedientes_path, :id => "form_buscar", :method => :get do%>
-	Buscar: <%= search_field_tag 'busqueda' %>
-	<%= submit_tag 'Buscar', :id => 'submit_buscar' %>
-	<% end %>
-
-	<br>
-	<p>
-		<% for char in 'A'..'Z' %>
+    	Buscar: <%= search_field_tag 'busqueda' %> 
+  		<%= submit_tag 'Buscar', :id => 'submit_buscar' %> 
+  	<% end %> 
+	
+	<% for char in 'A'..'Z' %>
 		<%= link_to char, expedientes_path(:char => char) %>
-		<% end %>
-	</p>
+	<% end %> 
 
-
-
-<table>
+<table class="list_resourses">
   <tr>
   	
-  	<th class="custom"> Id </th>
-    <th class="custom"> Tipo expediente </th>
-    <th class="custom"> Nombre del Paciente </th>
-    <th class="custom"> Tratante </th>
-
-    <th></th>
-    <th></th>
-    <th></th>
+  	<th>Id</th>
+    <th>Tipo expediente</th>
+    <th>Nombre del Paciente</th>
+    <th>Tratante</th>
+    <th>Mas detalle</th>
   </tr>
 
 <% @expedientes.each do |expediente| %>
   <tr>
-  	<td class="custom"> <%= expediente.id %> </td>
-    <td class="custom"> <%= expediente.tipo_expediente %> </td>
-       <td class="custom">
-    	<% expediente.pacientes.each do |paciente| %>
+  	<td><%= expediente.id %></td>
+    <td><%= expediente.tipo_expediente %></td>
+    <td>
+		<% expediente.pacientes.each do |paciente| %>
 			<%= paciente.nombre_completo %><br/>
-    	<% end %>
+		<% end %>
     </td>
-
-    <td class="custom"> tratante </td>
-    <td>                    </td>
+    <td>tratante</td>
     <td><%= link_to ' Ver ', expediente %></td>
-    <td>                    </td>
-    <!--<td><%= link_to ' Archivar ', expediente, confirm: 'Seguro que desea archivarlo?', method: :delete %></td>-->
   </tr>
 <% end %>
 </table>
 
 <br />
-<p class="footer">
+
 <%= link_to 'Crear nuevo expediente grupal', new_expediente_path %>
-</p>

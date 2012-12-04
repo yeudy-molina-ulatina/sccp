@@ -1,57 +1,8 @@
-#divhead{
-  width:900px; 
-  margin-left: auto;
-  margin-right: auto;
-  //background-color: blue;
-}
-div.main{
-  padding: 5px; 
-  margin: 2px 0 5px 0;
-}
-div.img{
-  float: left;
-  width: 80px;
-  height: auto;
-}
-div.datos{
-  width: 700px;
-  height: auto;
-  padding: 0 0 0 180px;
-}
-#divbody{
-    width:900px; 
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-table{
-  margin-left: auto;
-  margin-right: auto;
-}
-h1.head{
-  text-align: center;
-  font-family: Verdana, Geneva, sans-serif;
-}
-   
-th.custom{
-  border-width: 2px;
-  padding: 6px;
-  border-style: inset;
-  border-color: gray;
-  background-color: #6699ff;
+// Place all the styles related to the Citas controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
 
-}
-p.footer{
-  font-family: Verdana, Geneva, sans-serif;
-  font-size: 125%;
-  text-align: center;
+.expedientes {
   
-}
-td.custom{
-  border-width: 1px;
-  padding: 1px;
-  border-style: inset;
-  border-color: gray;
-  text-align: center;
 }
 
