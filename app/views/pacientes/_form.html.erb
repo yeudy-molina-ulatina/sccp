@@ -12,22 +12,20 @@
   <% end %>
 
 
-  <div0>
   <img name="Foto del paciente" src="" width="232" height="200" alt="">
-  </div0>
-  <div1 >
-  <div>
+  
+  <div class="field">
     <%= f.label "Nombre:" %> 
-   <%= f.text_field :nombre %>
-   <%= f.label "Apellido 1:" %> 
-   <%= f.text_field :apellido1 %>
-   <%= f.label "Apellido 2:" %> 
-   <%= f.text_field :apellido2 %>
+   	<%= f.text_field :nombre %>
+   	<%= f.label "Apellido 1:" %> 
+   	<%= f.text_field :apellido1 %>
+   	<%= f.label "Apellido 2:" %> 
+   	<%= f.text_field :apellido2 %>
   </div>
       
   <div class="field">
-  <%= f.label "Cédula:" %>
-  <%= f.text_field :cedula %>
+  	<%= f.label "Cédula:" %>
+  	<%= f.text_field :cedula %>
   </div>
   
   <div class="field">
@@ -57,10 +55,8 @@
       <option>Separado/a</option>
     </select>
   </div>
- </div1>   
  
-<div2>  
-  <div class="field"border: 3px solid #77d;>
+  <div class="field">
     <%= f.label "Teléfono casa:" %>
     <%= f.text_field :telefono_casa %>
 	<%= f.label "Teléfono celular:" %>
@@ -68,9 +64,7 @@
 	<%= f.label "Correo electrónico:" %>
     <%= f.text_field :correo_electronico %>
   </div>
-</div2>
 
-<div3>
   <div class="field">
     <%= f.label "Ocupación:" %>
     <%= f.text_field :ocupacion %>
@@ -79,9 +73,7 @@
 	<%= f.label "Años de estudio:" %>
     <%= f.number_field :anos_estudio %>
   </div>
-</div3>
 
-<div4>  
   <div class="field">
     <%= f.label "Provincia:" %>
     <%= f.text_field :provincia %>
@@ -91,13 +83,10 @@
     <%= f.text_field :distrito %>
   </div>
   
-    
   <div class="field">
     <%= f.label "Otras señas:" %>
     <%= f.text_area :otras_senas %>
-  </div>
-</div4>
-  
+  </div>  
  
   <div class="actions">
     <%= f.submit %>

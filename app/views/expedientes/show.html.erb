@@ -1,7 +1,7 @@
 <%if @expediente.individual?%>
-<h1 class="head"> <%= @expediente.pacientes.first.nombre_completo %> (<%= @expediente.tipo_expediente %>, número: <%=@expediente.id%>)</h1>
+<h1> <%= @expediente.pacientes.first.nombre_completo %> (<%= @expediente.tipo_expediente %>, número: <%=@expediente.id%>)</h1>
 <%else%>
-<h1 class="head"> Expediente Grupal (número: <%=@expediente.id%>)</h1>
+<h1> Expediente Grupal (número: <%=@expediente.id%>)</h1>
 <%end%>
 
 <p id="notice"><%= notice %></p>

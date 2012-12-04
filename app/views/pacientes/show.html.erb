@@ -1,6 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<p1>
 <p>
   <b>Nombre:</b>
   <%= @paciente.nombre %>
@@ -33,8 +32,6 @@
   <b>Estado civil:</b>
   <%= @paciente.estado_civil %>
 </p>
-</p1>
-<p2>
 <p>
   <b>Telefono casa:</b>
   <%= @paciente.telefono_casa %>
@@ -43,9 +40,7 @@
   <b>Correo electronico:</b>
   <%= @paciente.correo_electronico %>
 </p>
-</p2>
 
-<p3>
 <p>
   <b>Ocupacion:</b>
   <%= @paciente.ocupacion %>
@@ -54,9 +49,7 @@
   <b>Anios estudio:</b>
   <%= @paciente.anos_estudio %>
 </p>
-</p3>
 
-<p4>
 <p>
   <b>Provincia:</b>
   <%= @paciente.provincia %>
@@ -70,7 +63,6 @@
   <b>Otras senas:</b>
   <%= @paciente.otras_senas %>
 </p>
-</p4>
 
 
 <%= button_to 'Editar', edit_paciente_path(@paciente),:method => :get %>

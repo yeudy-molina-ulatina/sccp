@@ -1,36 +1,24 @@
 <h1>Lista de Espera</h1>
 <body>
 
-  <%= form_tag motivos_consulta_path, :id => "form_buscar", :method => :get do%>
-    	Buscar: <%= search_field_tag 'busqueda' %> 
-  		<%= submit_tag 'Buscar', :id => 'submit_buscar' %> 
-  	<% end %> 
-
-
- </br>
+<%= form_tag motivos_consulta_path, :id => "form_buscar", :method => :get do%>
+	Buscar: <%= search_field_tag 'busqueda' %> 
+	<%= submit_tag 'Buscar', :id => 'submit_buscar' %> 
+<% end %> 
  
- <div align="center">
-<p>
-	<% for char in 'A'..'Z' %>
-		<%= link_to char, motivos_consulta_path(:char => char) %>
-	<% end %> 
-	 
-</p>
-	 </div>
-	 </br>
-	 </br>
-	 
-	<div align="center"> 
+<% for char in 'A'..'Z' %>
+	<%= link_to char, motivos_consulta_path(:char => char) %>
+<% end %>
+
 <table>
-<table width="700" height="70" border="1">
   <tr>
-    <th bgcolor="lightblue" scope="col">Paciente</th>
-    <th bgcolor="lightblue" scope="col">Expediente</th>
-    <th bgcolor="lightblue" scope="col">Motivo inicial</th>
-	<th bgcolor="lightblue" scope="col">Estado</th>
-    <th bgcolor="lightblue" scope="col">Fecha inicio</th>
-    <th bgcolor="lightblue" scope="col">Nivel importancia</th>
-    <th bgcolor="lightblue" scope="col">Más detalles</th>  
+    <th>Paciente</th>
+    <th>Expediente</th>
+    <th>Motivo inicial</th>
+	<th>Estado</th>
+    <th>Fecha inicio</th>
+    <th>Nivel importancia</th>
+    <th>Más detalles</th>  
   </tr>
    
  
@@ -47,15 +35,10 @@
     <td><%= motivo_consulta.fecha_inicio %></td>
     <td><%= motivo_consulta.nivel_importancia %></td>
 	<td><%= link_to 'Mostrar', motivo_consulta, :method => :get %></td>
-   
   </tr>
 <% end %>
 </table>
 
- </div>
-
 <br />
-<div align="center"> 
-<%= button_to 'Nuevo Motivo Consulta', new_motivo_consulta_path, :method => :get %> 
 
- </div>
+<%= button_to 'Nuevo Motivo Consulta', new_motivo_consulta_path, :method => :get %> 
