@@ -1,45 +1,87 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Motivo inicial:</b>
-  <%= @motivo_consulta.motivo_inicial %>
-</p>
+  <div class="main">
+    
+        <div class="img">
+		<%= image_tag "avatar.png" %>
+	    </div>
+    
+    
+  <div class="datos">
+     
+    <p>
+	<b>Tipo de Expediente:</b>
+	<%= @motivo_consulta.expediente.tipo_expediente %>
+	</p>
+     
+    <p>
+	<b>Paciente:</b>
+	<% @motivo_consulta.expediente.pacientes.each do |paciente| %>
+			<%= paciente.nombre_completo %><br/>
+    	<% end %>
+	
+	 <p>
+     <b>Motivo inicial:</b>
+     <%= @motivo_consulta.motivo_inicial %>
+     </p>
 
-<p>
-  <b>Motivo real:</b>
-  <%= @motivo_consulta.motivo_real %>
-</p>
+	<p>
+    <b>Motivo real:</b>
+    <%= @motivo_consulta.motivo_real %>
+	</p>
 
-<p>
-  <b>Derivacion:</b>
-  <%= @motivo_consulta.derivacion %>
-</p>
+	<p>
+    <b>Derivacion:</b>
+    <%= @motivo_consulta.derivacion %>
+	</p>
 
-<p>
-  <b>Estado:</b>
-  <%= @motivo_consulta.estado %>
-</p>
+	<p>
+    <b>Estado:</b>
+    <%= @motivo_consulta.estado %>
+	</p>
 
-<p>
-  <b>Fecha inicio:</b>
-  <%= @motivo_consulta.fecha_inicio %>
-</p>
+	<p>
+    <b>Fecha inicio:</b>
+    <%= @motivo_consulta.fecha_inicio %>
+	</p>
 
-<p>
-  <b>Fecha fin:</b>
-  <%= @motivo_consulta.fecha_fin %>
-</p>
+    
+	<p>
+    <b>Fecha fin:</b>
+    <%= @motivo_consulta.fecha_fin %>
+    </p>
 
-<p>
-  <b>Nivel importancia:</b>
-  <%= @motivo_consulta.nivel_importancia %>
-</p>
+	<p>
+    <b>Nivel importancia:</b>
+    <%= @motivo_consulta.nivel_importancia %>
+	</p>
 
-<p>
-  <b>Expediente:</b>
-  <%= @motivo_consulta.expediente %>
-</p>
+	<p>
+    <b>Expediente:</b>
+    <%= @motivo_consulta.expediente.id %>
+	</p>
+   </div>
+  </div> 
 
 
-<%= link_to 'Editar', edit_motivo_consulta_path(@motivo_consulta) %> |
-<%= link_to 'Regresar', motivos_consulta_path %>
+    <div align="center">
+    <b>HISTORIAL DE REPORTES</b>
+    
+    <table>
+	<table width="700" height="70" border="1">
+  	<tr>
+    <th bgcolor="white" scope="col">Fecha</th>
+    <th bgcolor="white" scope="col">Tratante</th>
+    <th bgcolor="white" scope="col">Diagnóstico</th>
+	<th bgcolor="white" scope="col">Tratamiento</th>
+    <th bgcolor="white" scope="col">Temas Discutidos</th>
+    
+  	</tr>
+   </table>
+   </div>
+   
+    <br> 
+    <br />	 
+
+	<%= link_to 'Editar', edit_motivo_consulta_path(@motivo_consulta) %> |
+	<%= link_to 'Regresar', motivos_consulta_path %>
