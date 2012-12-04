@@ -3,6 +3,8 @@ class CitasController < ApplicationController
   # GET /citas.json
   def index
     @citas = Cita.all
+    
+    
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,7 +27,8 @@ class CitasController < ApplicationController
   # GET /citas/new.json
   def new
     @cita = Cita.new
-
+    #@pacientes = Paciente.all(:order => [:apellido1,:apellido2,:nombre])
+    @motivos_consulta = MotivoConsulta.where("estado = ?", MotivoConsulta::ESTADO_INACTIVO)
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @cita }
@@ -35,6 +38,7 @@ class CitasController < ApplicationController
   # GET /citas/1/edit
   def edit
     @cita = Cita.find(params[:id])
+    @motivos_consulta = MotivoConsulta.where("estado = ?", MotivoConsulta::ESTADO_INACTIVO)
   end
 
   # POST /citas
@@ -44,7 +48,7 @@ class CitasController < ApplicationController
 
     respond_to do |format|
       if @cita.save
-        format.html { redirect_to @cita, notice: 'Cita creada satisfactoriamente.' }
+        format.html { redirect_to @cita, notice: 'Cita was successfully created.' }
         format.json { render json: @cita, status: :created, location: @cita }
       else
         format.html { render action: "new" }
@@ -60,7 +64,7 @@ class CitasController < ApplicationController
 
     respond_to do |format|
       if @cita.update_attributes(params[:cita])
-        format.html { redirect_to @cita, notice: 'Cita modificada satisfactoriamente.' }
+        format.html { redirect_to @cita, notice: 'Cita was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

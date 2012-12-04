@@ -11,22 +11,31 @@
     </div>
   <% end %>
 
+  
   <div class="field">
-    <%= f.label "Fecha" %><br />
+    <%= f.label :paciente %><br />
+    <%= f.collection_select :motivo_consulta_id, @motivos_consulta, :id, :motivo_inicial %>
+  </div>    
+
+  
+  
+  <div class="field">
+    <%= f.label :fecha %><br />
     <%= f.date_select :fecha %>
   </div>
   <div class="field">
-    <%= f.label "Lugar de atención" %><br />
+    <%= f.label :hora %><br />
+    <%= f.time_select :hora, {:ampm => true}%>
+  </div>
+  <div class="field">
+    <%= f.label :duracion %><br />
+    <%= f.number_field :duracion %>
+  </div>
+  <div class="field">
+    <%= f.label :lugar_atencion %><br />
     <%= f.text_field :lugar_atencion %>
   </div>
-  <div class="field">
-    <%= f.label "Hora" %><br />
-    <%= f.text_field :hora %>
-  </div>
-  <div class="field">
-    <%= f.label "Duración" %><br />
-    <%= f.text_field :duracion %>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

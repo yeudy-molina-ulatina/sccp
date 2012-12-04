@@ -1,7 +1,7 @@
 <%if @expediente.individual?%>
-<h1> <%= @expediente.pacientes.first.nombre_completo %> (<%= @expediente.tipo_expediente %>, número: <%=@expediente.id%>)</h1>
+<h1 class="link"> <%= link_to @expediente.pacientes.first.nombre_completo, @expediente.pacientes.first %> </h1>
 <%else%>
-<h1> Expediente Grupal (número: <%=@expediente.id%>)</h1>
+<h1> Expediente Grupal </h1>
 <%end%>
 
 <p id="notice">
@@ -9,18 +9,18 @@
 </p>
 <div class="main">
 
-	<div class="img">
+	<div class="foto">
 		<%= image_tag "avatar.png" %>
 	</div>
 	<div class="datos">
 
 		<p>
-			<b>Número de Expediente:<b> <%= @expediente.tipo_expediente %> número <%= @expediente.id%> 
+			<b>Expediente Número:<b><%= @expediente.id%> 
 		</p>	
 		
 		<p>
-			<b>Tipo de Expediente </b>
-	
+			<b>Tipo de Expediente: </b>
+	         <%= @expediente.tipo_expediente %>
 		</p>
 		
 		<p>
@@ -33,6 +33,8 @@
 			Tratante
 
 		</p>
+		
+	    </div>
 
 		<p>
 			<b>Fecha creacion:</b>
@@ -46,12 +48,30 @@
 
 		<p>
 			<b>Motivos de Consulta: </b>
-			motivos de consulta
+			
+			<%
+			i=0
+			@motivos_consulta.each do |motivo_consulta|%>
+			
+			    <div class="motivo">
+			    <%= link_to image_tag("file.png",:size => "70x70"), motivo_consulta, :method => :get %>
+			    <br>
+			    <%= motivo_consulta.motivo_real %>
+			    </div>
+			<%if i < 2
+				i = i+1		
+				  
+			  else
+			  	i = 0 %>
+			  	<br><br><br><br><br><br>
+			  <%end%>	
+			<%end%>
 		</p>
 
-	</div>
+
 
 </div>
+<br><br><br><br>
 
 
 <%= link_to 'Modificar', edit_expediente_path(@expediente) %> |

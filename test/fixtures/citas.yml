@@ -1,13 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  fecha: 2012-11-27
+  fecha: 2012-12-04
+  hora: 2012-12-04 11:39:55
+  duracion: 1
   lugar_atencion: MyString
-  hora: MyString
-  duracion: MyString
+  motivo_consulta: 
 
 two:
-  fecha: 2012-11-27
+  fecha: 2012-12-04
+  hora: 2012-12-04 11:39:55
+  duracion: 1
   lugar_atencion: MyString
-  hora: MyString
-  duracion: MyString
+  motivo_consulta: 

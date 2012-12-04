@@ -1,11 +1,12 @@
-<h1>Control de citas</h1>
+<h1 class="content_title">Citas</h1>
 
-<table>
+<table class="list_resourses">
   <tr>
     <th>Fecha</th>
-    <th>Lugar atenci&oacute;n</th>
     <th>Hora</th>
-    <th>Duraci&oacute;n</th>
+    <th>Duración</th>
+    <th>Lugar atención</th>
+    <th>Motivo consulta</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,10 +15,11 @@
 <% @citas.each do |cita| %>
   <tr>
     <td><%= cita.fecha %></td>
-    <td><%= cita.lugar_atencion %></td>
-    <td><%= cita.hora %></td>
+    <td><%= cita.hora%></td>
     <td><%= cita.duracion %></td>
-    <td><%= link_to 'Mostrar', cita %></td>
+    <td><%= cita.lugar_atencion %></td>
+    <td><%= cita.motivo_consulta.motivo_inicial %></td>
+    <td><%= link_to 'Mostar', cita %></td>
     <td><%= link_to 'Editar', edit_cita_path(cita) %></td>
     <td><%= link_to 'Eliminar', cita, confirm: '¿Esta seguro?', method: :delete %></td>
   </tr>
@@ -26,4 +28,4 @@
 
 <br />
 
-<%= button_to 'Cita nueva', new_cita_path, :method => :get %>
+<%= button_to 'Cita nueva', new_cita_path, :method => :get  %>

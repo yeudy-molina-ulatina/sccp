@@ -1,13 +1,9 @@
-<p id="notice"><%= notice %></p>
+<p id="notice">
+	<%= notice %></p>
 
 <p>
   <b>Fecha:</b>
   <%= @cita.fecha %>
-</p>
-
-<p>
-  <b>Lugar atenci&oacute;n:</b>
-  <%= @cita.lugar_atencion %>
 </p>
 
 <p>
@@ -16,10 +12,20 @@
 </p>
 
 <p>
-  <b>Duraci&oacute;n:</b>
+  <b>Duración:</b>
   <%= @cita.duracion %>
 </p>
 
+<p>
+  <b>Lugar atención:</b>
+  <%= @cita.lugar_atencion %>
+</p>
 
-<%= button_to 'Editar', edit_cita_path(@cita), :method => :get %> 
-<%= button_to 'Regresar', citas_path, :method => :get %>
+<p>
+  <b>Motivo consulta:</b>
+  <%= @cita.motivo_consulta %>
+</p>
+
+
+<%= link_to 'Editar', edit_cita_path(@cita) %> |
+<%= link_to 'Regresar', citas_path %>

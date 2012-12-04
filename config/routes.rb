@@ -1,5 +1,10 @@
 Sccp::Application.routes.draw do
+
+  resources :reportes
+
   resources :citas
+
+  get "lista_espera/index"
 
   get "clinica/index"
 

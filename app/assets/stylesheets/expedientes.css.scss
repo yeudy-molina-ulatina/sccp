@@ -4,5 +4,46 @@
 
 .expedientes {
   
+  div.motivo {
+    float: left;
+    text-align: center;
+    padding: 5px;
+    }
+    
+  div.foto {
+    float: left;
+    text-align: center;
+    padding: 5px;
+    }
+      
+  h1.link{
+    text-align:center;
+    color: black;
+    a:hover,:visited:hover{
+       background: none;
+       color: gray;
+    }
+    
+    a:link,:visited{
+      color: black;
+      text-decoration: none
+    }
+    
+  }
+  
+  
+  div.datos{
+     width: 700px;
+     height: auto;
+     padding: 0 0 0 180px;
+  }
+  
+    
+  a:hover {
+      background: none;  
+      
+  }  
+  
 }
+
 
