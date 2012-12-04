@@ -1,4 +1,9 @@
 Sccp::Application.routes.draw do
+
+  resources :citas
+
+  get "lista_espera/index"
+
   get "clinica/index"
 
   resources :motivos_consulta

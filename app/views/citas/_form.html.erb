@@ -1,0 +1,37 @@
+<%= form_for(@cita) do |f| %>
+  <% if @cita.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cita.errors.count, "error") %> prohibited this cita from being saved:</h2>
+
+      <ul>
+      <% @cita.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fecha %><br />
+    <%= f.date_select :fecha %>
+  </div>
+  <div class="field">
+    <%= f.label :hora %><br />
+    <%= f.time_select :hora %>
+  </div>
+  <div class="field">
+    <%= f.label :duracion %><br />
+    <%= f.number_field :duracion %>
+  </div>
+  <div class="field">
+    <%= f.label :lugar_atencion %><br />
+    <%= f.text_field :lugar_atencion %>
+  </div>
+  <div class="field">
+    <%= f.label :motivo_consulta %><br />
+    <%= f.text_field :motivo_consulta %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

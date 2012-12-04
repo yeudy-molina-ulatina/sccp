@@ -3,9 +3,10 @@ class MotivosConsultaController < ApplicationController
   # GET /motivos_consulta.json
   def index
     
+    @motivos_consulta = MotivoConsulta.all
+    
     if params[:char].nil? and params[:busqueda].nil?
-      @motivos_consulta = MotivoConsulta.where(:estado => MotivoConsulta::ESTADO_INACTIVO)
-    elsif params[:busqueda].nil?
+      @motivos_consulta = MotivoConsulta.all
       @motivos_consulta = MotivoConsulta.joins(:expediente => :pacientes).where("estado = ? AND apellido1 LIKE ?", MotivoConsulta::ESTADO_INACTIVO, "#{params[:char]}%")
     else
       @busqueda = "%#{params[:busqueda]}%"
