@@ -1,6 +1,4 @@
 Sccp::Application.routes.draw do
-  resources :citas
-
   get "clinica/index"
 
   resources :motivos_consulta
