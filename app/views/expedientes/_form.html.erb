@@ -31,12 +31,14 @@
 
 	<%= button_to 'Agrupar Paciente', :name => "agregar", :to => nil, :confirm => "Se agregara el paciente"%>
 	
-	<table>
+	<br>
+	
+	<table class="list_resourses">
   <tr>
   	
-  	<th class="custom"> Id </th>
-    <th class="custom"> Nombre del Paciente </th>
-    <th class="custom"> Tratante </th>
+  	<th > Id </th>
+    <th > Nombre del Paciente </th>
+    <th > Tratante </th>
 
     <th></th>
     <th></th>
@@ -47,10 +49,10 @@
 
 
   <tr>
-  	<td class="custom"> Id </td>
-        <td class="custom"> Paciente <%=i%> en grupo </td>
+  	<td > Id </td>
+        <td > Paciente <%=i%> en grupo </td>
       <%i = i+1 %>
-    <td class="custom"> tratante </td>
+    <td > tratante </td>
     <td>                    </td>
     <td><%= link_to ' Ver ', nil , confirm:'Aqui se desplegara la informacion del paciente' %></td>
     <td>                    </td>
@@ -60,6 +62,7 @@
 <% end %>
 </table>
 
+<br>
 
 
 
