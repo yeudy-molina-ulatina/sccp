@@ -4,6 +4,20 @@
   margin-right: auto;
   //background-color: blue;
 }
+div.main{
+  padding: 5px; 
+  margin: 2px 0 5px 0;
+}
+div.img{
+  float: left;
+  width: 80px;
+  height: auto;
+}
+div.datos{
+  width: 700px;
+  height: auto;
+  padding: 0 0 0 180px;
+}
 #divbody{
     width:900px; 
   margin-left: auto;
