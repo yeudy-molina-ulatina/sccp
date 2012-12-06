@@ -90,27 +90,22 @@ body {
    =================== */
 
 .header-container {
-    /*border-bottom: 20px solid #e44d26;
-	border-bottom: 20px solid #1e5224;*/
 	border-bottom: 10px solid #88b4f5;
 }
 
 .footer-container,
 .main aside {
-    /*border-top: 20px solid #e44d	26;*/
 	border-top: 10px solid #88b4f5;
 }
 
 .header-container,
 .footer-container,
 .main aside {
-    /*background: #f16529;
-	background: #119740;*/
 	background: #d5e5fe;
 }
 
 .title {
-    color: white;
+    color: #3E708A;
 }
 
 /* ==============
@@ -132,9 +127,7 @@ nav a {
     font-weight: bold;
 
     color: white;
-    /*background: #e44d26;
-    background: #1e5224;*/
-   background: #88b4f5;
+	background: #88b4f5;
 }
 
 nav a:hover,
@@ -208,11 +201,11 @@ table.list_resourses {
 table.list_resourses th {
   border: 2px solid white;
   font-weight: bold;
-  background-color: #88b4f5;
+  background-color: #88B4F5;
   color: white;
 }
 table.list_resourses th.hilite {
-  background-color: #119740;
+  background-color: #3E708A;
 }
 table.list_resourses th, table.list_resourses td {
   padding: 4px;
@@ -239,9 +232,9 @@ table.list_resourses th, table.list_resourses td {
 
     nav a {
         float: left;
-        width: 27%;
-        margin: 0 1.7%;
-        padding: 25px 2%;
+        width: 15%;
+        margin: 0 1%;
+        padding: 25px 1%;
         margin-bottom: 0;
     }
 
@@ -289,7 +282,7 @@ table.list_resourses th, table.list_resourses td {
 
     nav {
         float: right;
-        width: 38%;
+        width: 65%;
     }
 
 /* ============
