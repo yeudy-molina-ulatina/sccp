@@ -1,0 +1,35 @@
+<%= form_for([@motivo_consulta, @asignacion]) do |f| %>
+  <% if @asignacion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@asignacion.errors.count, "error") %> prohibited this asignacion from being saved:</h2>
+
+      <ul>
+      <% @asignacion.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label @asignacion.tipo_asignacion.humanize %><br />
+    <%= f.collection_select :usuario_id, @usuarios, :id, :nombre_completo %>
+
+  </div>
+  <div class="field">
+    <%= f.label :fecha_inicio %><br />
+    <%= f.date_select :fecha_inicio, :default => @motivo_consulta.fecha_inicio %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_final %><br />
+    <%= f.date_select :fecha_final, :default => @motivo_consulta.fecha_fin%>
+  </div>
+  
+  <%= f.hidden_field :tipo_asignacion %>
+  
+  <br />
+  
+  <div class="actions">
+    <%= f.submit "Agregar/Editar #{@asignacion.tipo_asignacion.humanize}"%>
+  </div>
+<% end %>

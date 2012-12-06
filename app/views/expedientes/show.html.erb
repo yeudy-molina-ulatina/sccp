@@ -24,13 +24,18 @@
 		</p>
 		
 		<p>
-			<b>Supervisor: </b>
-			Supervisor
+			<b>Supervisor(es): </b>
+			<% @expediente.supervisores.each do |supervisor| %>
+				<%= supervisor.nombre_completo %>&nbsp;	
+			<% end %>
+
 
 		</p>
 		<p>
-			<b>Tratante: </b>
-			Tratante
+			<b>Tratante(s): </b>
+			<% @expediente.tratantes.each do |tratante| %>
+				<%= tratante.nombre_completo %>&nbsp;	
+			<% end %>
 
 		</p>
 		
@@ -51,7 +56,7 @@
 			
 			<%
 			i=0
-			@motivos_consulta.each do |motivo_consulta|%>
+			@expediente.motivos_consulta.each do |motivo_consulta|%>
 			
 			    <div class="motivo">
 			    <%= link_to image_tag("file.png",:size => "70x70"), motivo_consulta, :method => :get %>

@@ -1,0 +1,25 @@
+<h1 class="content_title">Lista de Usuarios</h1>
+
+<table class="list_resourses">
+  <tr>
+    <th>Usuario</th>
+    <th>Nombre</th>
+    <th>Correo electronico</th>
+    <th>Rol</th>
+    <th>Editar usuario</th>
+  </tr>
+
+<% @usuarios.each do |usuario| %>
+  <tr>
+    <td><%= usuario.usuario %></td>
+    <td><%= usuario.nombre_completo %></td>
+    <td><%= usuario.correo_electronico %></td>
+    <td><%= usuario.rol.nombre %></td>
+    <td><%= link_to 'Editar', edit_usuario_path(usuario) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo Usuario', new_usuario_path %>

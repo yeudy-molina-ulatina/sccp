@@ -26,13 +26,17 @@
 <% @expedientes.each do |expediente| %>
   <tr>
   	<td><%= expediente.id %></td>
-    <td><%= expediente.tipo_expediente %></td>
+    <td><%= expediente.tipo_expediente.humanize %></td>
     <td>
 		<% expediente.pacientes.each do |paciente| %>
 			<%= paciente.nombre_completo %><br/>
 		<% end %>
     </td>
-    <td>tratante</td>
+    <td>
+			<% expediente.tratantes.each do |tratante| %>
+				<%= tratante.nombre_completo %><br/>	
+			<% end %>
+    </td>
     <td><%= link_to ' Ver ', expediente %></td>
   </tr>
 <% end %>

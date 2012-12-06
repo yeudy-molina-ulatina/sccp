@@ -17,4 +17,5 @@
 ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'motivo_consulta', 'motivos_consulta'
   inflect.irregular 'cita', 'citas'
+  inflect.irregular 'asignacion', 'asignaciones'
 end

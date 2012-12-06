@@ -23,7 +23,8 @@
 	<th>Estado</th>
     <th>Fecha inicio</th>
     <th>Nivel importancia</th>
-    <th>Más detalles</th>  
+    <th>Más detalles</th>
+    <th>Asignar</th>        
   </tr>
    
  
@@ -40,6 +41,8 @@
     <td><%= motivo_consulta.fecha_inicio %></td>
     <td><%= motivo_consulta.nivel_importancia %></td>
 	<td><%= link_to 'Mostrar', motivo_consulta, :method => :get %></td>
+	<td><%= link_to 'Asignar', new_motivo_consulta_asignacion_path(motivo_consulta, :tipo_asignacion => Asignacion::TIPO_ASIGNACION_TRATANTE), :method => :get %></td>
+
   </tr>
 <% end %>
 </table>

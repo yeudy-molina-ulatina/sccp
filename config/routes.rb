@@ -1,5 +1,7 @@
 Sccp::Application.routes.draw do
 
+  resources :usuarios
+
   resources :reportes
 
   resources :citas
@@ -8,7 +10,9 @@ Sccp::Application.routes.draw do
 
   get "clinica/index"
 
-  resources :motivos_consulta
+  resources :motivos_consulta do
+    resources :asignaciones
+  end
 
   resources :expedientes
 

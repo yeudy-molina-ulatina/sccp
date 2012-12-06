@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  usuario: 
+  motivo_consulta: 
+  fecha_inicio: 2012-12-06
+  fecha_final: 2012-12-06
+  tipo_asignacion: MyString
+
+two:
+  usuario: 
+  motivo_consulta: 
+  fecha_inicio: 2012-12-06
+  fecha_final: 2012-12-06
+  tipo_asignacion: MyString

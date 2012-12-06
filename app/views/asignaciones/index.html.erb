@@ -1,0 +1,29 @@
+<h1>Listing asignaciones</h1>
+
+<table>
+	<tr>
+		<th>Usuario</th>
+		<th>Fecha inicio</th>
+		<th>Fecha final</th>
+		<th>Tipo asignacion</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+
+	<% @asignaciones.each do |asignacion| %>
+	<tr>
+		<td><%= asignacion.usuario.nombre_completo %></td>
+		<td><%= asignacion.fecha_inicio %></td>
+		<td><%= asignacion.fecha_final %></td>
+		<td><%= asignacion.tipo_asignacion.humanize %></td>
+		<td><%= link_to 'Show', motivo_consulta_asignacion_path(@motivo_consulta, asignacion) %></td>
+		<td><%= link_to 'Edit', edit_motivo_consulta_asignacion_path(@motivo_consulta, asignacion) %></td>
+		<td><%= link_to 'Destroy', motivo_consulta_asignacion_path(@motivo_consulta, asignacion), confirm: 'Are you sure?', method: :delete %></td>
+	</tr>
+	<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Agregar Asignacion', new_motivo_consulta_asignacion_path %>

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Usuario:</b>
+  <%= @asignacion.usuario.nombre_completo %>
+</p>
+
+<p>
+  <b>Fecha inicio:</b>
+  <%= @asignacion.fecha_inicio %>
+</p>
+
+<p>
+  <b>Fecha final:</b>
+  <%= @asignacion.fecha_final %>
+</p>
+
+<p>
+  <b>Tipo asignacion:</b>
+  <%= @asignacion.tipo_asignacion.humanize %>
+</p>
+
+
+<%= link_to 'Editar', edit_motivo_consulta_asignacion_path(@motivo_consulta, @asignacion) %> |
+<%= link_to 'Regresar', motivo_consulta_asignaciones_path %>

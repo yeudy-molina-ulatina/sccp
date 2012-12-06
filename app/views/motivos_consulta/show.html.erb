@@ -1,100 +1,119 @@
-<p id="notice"><%= notice %></p>
+<p id="notice">
+	<%= notice %>
+</p>
+<div class="main">
 
-  <div class="main">
-    
-        <div class="img">
+	<div class="img">
 		<%= image_tag "avatar.png" %>
-	    </div>
-    
-    
-  <div class="datos">
-     
-    <p>
-	<b>Tipo de Expediente:</b>
-	<%= @motivo_consulta.expediente.tipo_expediente %>
-	</p>
-     
-    <p>
-	<b>Paciente:</b>
-	<% @motivo_consulta.expediente.pacientes.each do |paciente| %>
-	<%= paciente.nombre_completo %><br/>
-    <% end %>
-	
-	 <p>
-     <b>Motivo inicial:</b>
-     <%= @motivo_consulta.motivo_inicial %>
-     </p>
+	</div>
 
-	<p>
-    <b>Motivo real:</b>
-    <%= @motivo_consulta.motivo_real %>
-	</p>
+	<div class="datos">
+		<p>
+			<b>N&uacute;mero de Expediente:</b>
+			<%= @motivo_consulta.expediente.id %>
+		</p>
 
-	<p>
-    <b>Derivacion:</b>
-    <%= @motivo_consulta.derivacion %>
-	</p>
+		<p>
+			<b>Tipo de Expediente:</b>
+			<%= @motivo_consulta.expediente.tipo_expediente %>
+		</p>
 
-	<p>
-    <b>Estado:</b>
-    <%= @motivo_consulta.estado %>
-	</p>
+		<p>
+			<b>Paciente(s):</b>
+			<% @motivo_consulta.pacientes.each do |paciente| %>
+				<%= paciente.nombre_completo %><br/>
+			<% end %>
+		</p>
 
-	<p>
-    <b>Fecha inicio:</b>
-    <%= @motivo_consulta.fecha_inicio %>
-	</p>
+		<p>
+			<b>Tratante(s):</b><br />
+			<% @motivo_consulta.asignaciones_tratantes.each do |asignacion| %>
+				<%= asignacion.usuario.nombre_completo %> (Desde: <%= asignacion.fecha_inicio %> hasta: <%= asignacion.fecha_final %>)&nbsp;&nbsp;
+				<%= link_to 'Editar', edit_motivo_consulta_asignacion_path(@motivo_consulta, asignacion) %> |
+				<%= link_to 'Quitar', motivo_consulta_asignacion_path(@motivo_consulta, asignacion), confirm: 'Esta seguro que desea quitar este tratante?', method: :delete %><br />
+			<% end %>
+			<%= link_to 'Agregar Tratante', new_motivo_consulta_asignacion_path(@motivo_consulta, :tipo_asignacion => Asignacion::TIPO_ASIGNACION_TRATANTE) %>
+		<p/>
+		
+		<p>
+			<b>Supervisor(s):</b><br />
+			<% @motivo_consulta.asignaciones_supervisores.each do |asignacion| %>
+				<%= asignacion.usuario.nombre_completo %> (Desde: <%= asignacion.fecha_inicio %> hasta: <%= asignacion.fecha_final %>)&nbsp;&nbsp;
+				<%= link_to 'Editar', edit_motivo_consulta_asignacion_path(@motivo_consulta, asignacion) %> |
+				<%= link_to 'Quitar', motivo_consulta_asignacion_path(@motivo_consulta, asignacion), confirm: 'Esta seguro que desea quitar este supervisor', method: :delete %><br />
+			<% end %>
+			<%= link_to 'Agregar Supervisor', new_motivo_consulta_asignacion_path(@motivo_consulta, :tipo_asignacion => Asignacion::TIPO_ASIGNACION_SUPERVISOR) %>
+		<p/>		
 
-    
-	<p>
-    <b>Fecha fin:</b>
-    <%= @motivo_consulta.fecha_fin %>
-    </p>
+		<p>
+			<b>Motivo inicial:</b>
+			<%= @motivo_consulta.motivo_inicial.humanize %>
+		</p>
 
-	<p>
-    <b>Nivel importancia:</b>
-    <%= @motivo_consulta.nivel_importancia %>
-	</p>
+		<p>
+			<b>Motivo real:</b>
+			<%= @motivo_consulta.motivo_real.humanize %>
+		</p>
 
-	<p>
-    <b>Expediente:</b>
-    <%= @motivo_consulta.expediente.id %>
-	</p>
-   </div>
-  </div> 
+		<p>
+			<b>Derivacion:</b>
+			<%= @motivo_consulta.derivacion.humanize %>
+		</p>
 
+		<p>
+			<b>Estado:</b>
+			<%= @motivo_consulta.estado.humanize %>
+		</p>
 
-    <div align="center">
-    <b>HISTORIAL DE REPORTES</b>
-    
-    <table>
-	<table width="700" height="70" border="1">
-  	<tr>
-    <th bgcolor="white" scope="col">Fecha</th>
-    <th bgcolor="white" scope="col">Tratante</th>
-    <th bgcolor="white" scope="col">Diagnóstico</th>
-	<th bgcolor="white" scope="col">Tratamiento</th>
-    <th bgcolor="white" scope="col">Temas Discutidos</th>
-    <th bgcolor="white" scope="col">Mas Detalles</th>
-  	</tr>
-  	
-  	<% @motivo_consulta.citas.each do |cita| %>
-  		<tr>
+		<p>
+			<b>Fecha inicio:</b>
+			<%= @motivo_consulta.fecha_inicio %>
+		</p>
+
+		<p>
+			<b>Fecha fin:</b>
+			<%= @motivo_consulta.fecha_fin %>
+		</p>
+
+		<p>
+			<b>Nivel importancia:</b>
+			<%= @motivo_consulta.nivel_importancia.humanize %>
+		</p>
+	</div>
+
+</div>
+
+<div align="center">
+	<b>HISTORIAL DE REPORTES</b>
+
+	<table>
+		<table width="700" height="70" border="1">
+			<tr>
+				<th bgcolor="white" scope="col">Fecha</th>
+				<th bgcolor="white" scope="col">Tratante</th>
+				<th bgcolor="white" scope="col">Diagnóstico</th>
+				<th bgcolor="white" scope="col">Tratamiento</th>
+				<th bgcolor="white" scope="col">Temas Discutidos</th>
+				<th bgcolor="white" scope="col">Mas Detalles</th>
+			</tr>
+
+			<% @motivo_consulta.citas.each do |cita| %>
+			<tr>
 				<td><%= cita.fecha %></td>
 				<td>Tratante</td>
-		    	<td>Diagnóstico</td>
-		    	<td>Tratamiento</td>
-		    	<td>Temas Discutidos</td>
+				<td>Diagnóstico</td>
+				<td>Tratamiento</td>
+				<td>Temas Discutidos</td>
 				<td><%= link_to 'Mostrar', cita, :method => :get %></td>
-  		</tr>
-	<% end %>
-  	
-   </table>
-   </div>
-   
-    <br> 
-    <br />	 
+			</tr>
+			<% end %>
 
-	<%= link_to 'Editar', edit_motivo_consulta_path(@motivo_consulta) %> |
-	<%= link_to 'Regresar', '/lista_espera/index' %>
+		</table>
+</div>
+
+<br />
+<br />
+
+<%= link_to 'Editar', edit_motivo_consulta_path(@motivo_consulta) %> |
+<%= link_to 'Regresar', lista_espera_path %>
 

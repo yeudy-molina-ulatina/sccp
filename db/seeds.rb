@@ -5,3 +5,36 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+Rol.delete_all
+
+#
+# Roles
+#
+Rol.delete_all
+
+roles = [{:nombre => 'Administrador', :descripcion => 'Administrador'},
+          {:nombre => 'Director', :descripcion => 'Director'},  
+          {:nombre => 'Psicologo', :descripcion => 'Psicologo'},
+          {:nombre => 'Recepcionista', :descripcion => 'Recepcionista'},
+          {:nombre => 'Profesor', :descripcion => 'Profesor'},
+          {:nombre => 'Estudiante', :descripcion => 'Estudiante'}
+  ]
+  
+roles.each do |rol|
+  Rol.create!(rol)
+end
+
+#
+# Usuarios
+#
+Usuario.delete_all
+id_rol_administrador = Rol.find_by_nombre(:Administrador).id
+
+usuarios = [{:usuario => 'admin', :nombre => 'General', :apellido1 => 'Usuario', :apellido2 => 'Administrador', :correo_electronico => 'admin@sccp.sa.cr', :rol_id => id_rol_administrador, :password => "admin", :password_confirmation => "admin" }
+  ]
+  
+usuarios.each do |usuario|
+  Usuario.create!(usuario)
+end
