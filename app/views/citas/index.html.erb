@@ -1,29 +1,37 @@
 <h1 class="content_title">Citas</h1>
 
 <table class="list_resourses">
-  <tr>
-    <th>Fecha</th>
-    <th>Hora</th>
-    <th>Duración</th>
-    <th>Lugar atención</th>
-    <th>Motivo consulta</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+	<tr>
+		<th>Fecha</th>
+		<th>Hora</th>
+		<th>Duración</th>
+		<th>Lugar atención</th>
+		<th>Consultorio</th>
+		<th>Paciente(s)</th>
+		<th>Tratante(s)</th>
+		<th>Editar/Cancelar</th>
+	</tr>
 
-<% @citas.each do |cita| %>
-  <tr>
-    <td><%= cita.fecha %></td>
-    <td><%= cita.hora%></td>
-    <td><%= cita.duracion %></td>
-    <td><%= cita.lugar_atencion %></td>
-    <td><%= cita.motivo_consulta.motivo_inicial %></td>
-    <td><%= link_to 'Mostar', cita %></td>
-    <td><%= link_to 'Editar', edit_cita_path(cita) %></td>
-    <td><%= link_to 'Eliminar', cita, confirm: '¿Esta seguro?', method: :delete %></td>
-  </tr>
-<% end %>
+	<% @citas.each do |cita| %>
+	<tr>
+		<td><%= cita.fecha %></td>
+		<td><%= cita.hora_inicio%></td>
+		<td><%= cita.hora_fin %></td>
+		<td><%= cita.lugar_atencion %></td>
+		<td><%= cita.consultorio.numero_consultorio %></td>
+		<td>
+			<% cita.pacientes.each do |paciente| %>
+				<%= paciente.nombre_completo %><br/>
+			<% end %>
+		</td>
+		<td>
+			<% cita.usuarios.each do |usuario| %>
+				<%= usuario.nombre_completo %><br/>
+			<% end %>
+		</td>
+		<td><%= link_to 'Editar', edit_cita_path(cita) %> | <%= link_to 'Cancelar Cita', cita, confirm: '¿Esta seguro?', method: :delete %></td>
+	</tr>
+	<% end %>
 </table>
 
 <br />
