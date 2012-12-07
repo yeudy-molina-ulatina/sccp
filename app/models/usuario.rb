@@ -2,6 +2,7 @@ class Usuario < ActiveRecord::Base
   belongs_to :rol
   has_many :asignaciones
   has_many :motivos_consulta, :through => :asignaciones
+  has_and_belongs_to_many :citas
   
   attr_accessible :usuario, :password, :password_confirmation, :nombre, :apellido1, :apellido2, :correo_electronico, :rol_id
   validates :usuario, presence: true, uniqueness: true
