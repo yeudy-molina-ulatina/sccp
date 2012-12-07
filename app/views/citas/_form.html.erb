@@ -15,6 +15,7 @@
   <div class="field">
     <%= f.label :paciente %><br />
     <%= f.collection_select :motivo_consulta_id, @motivos_consulta, :id, :motivo_inicial %>
+  	
   </div>    
 
   
@@ -37,6 +38,7 @@
   </div>
 
   <div class="actions">
+    <%= button_to 'Reporte', new_reporte_path, :method => :get %>
     <%= f.submit %>
   </div>
 <% end %>

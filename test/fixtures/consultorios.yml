@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  numero_consultorio: MyString
+  horario: MyString
+  proposito: MyString
+  area: MyString
+  citas: 
+
+two:
+  numero_consultorio: MyString
+  horario: MyString
+  proposito: MyString
+  area: MyString
+  citas: 
