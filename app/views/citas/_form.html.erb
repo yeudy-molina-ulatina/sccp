@@ -15,26 +15,32 @@
   <div class="field">
     <%= f.label :paciente %><br />
     <%= f.collection_select :motivo_consulta_id, @motivos_consulta, :id, :motivo_inicial %>
-  	
   </div>    
 
   
   
   <div class="field">
-    <%= f.label :fecha %><br />
+    <%= f.label "Fecha" %><br />
     <%= f.date_select :fecha %>
   </div>
   <div class="field">
-    <%= f.label :hora %><br />
-    <%= f.time_select :hora, {:ampm => true}%>
+    <%= f.label "Hora inicio" %><br />
+    <%= f.time_select :hora_inicio, {:ampm => true}%>
   </div>
+  
   <div class="field">
-    <%= f.label :duracion %><br />
-    <%= f.number_field :duracion %>
+    <%= f.label "Hora final" %><br />
+    <%= f.time_select :hora_fin, {:ampm => true}%>
   </div>
+  
   <div class="field">
     <%= f.label :lugar_atencion %><br />
     <%= f.text_field :lugar_atencion %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :numero_consultorio %><br />
+    <%= select_tag "cita[numero_consultorio]", options_for_select(%w{ ConsultorioB Consultorio1 Consultorio3 Consultorio4 Consultorio5 Consultorio6}), :prompt => "Seleccione" %> 
   </div>
 
   <div class="actions">

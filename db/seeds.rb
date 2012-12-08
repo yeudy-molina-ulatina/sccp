@@ -38,3 +38,23 @@ usuarios = [{:usuario => 'admin', :nombre => 'General', :apellido1 => 'Usuario',
 usuarios.each do |usuario|
   Usuario.create!(usuario)
 end
+
+Consultorio.delete_all
+
+#
+# Consultorio
+#
+Consultorio.delete_all
+
+consultorios = [{:numero_consultorio => 'Consultorio B', :proposito => 'Tratamientos relajacion'},
+                {:numero_consultorio => 'Consultorio 1', :proposito => 'Consultorio 1'},  
+                {:numero_consultorio => 'Consultorio 3', :proposito => 'Atencion de infantes'},
+                {:numero_consultorio => 'Consultorio 4', :proposito => 'Consultorio 4'},
+                {:numero_consultorio => 'Consultorio 5', :proposito => 'Tratamientos relajacion'},
+                {:numero_consultorio => 'Consultorio 6', :proposito => 'Consultorio 6'}
+  ]
+  
+consultorios.each do |consultorio|
+Consultorio.create!(consultorio)
+end
+
