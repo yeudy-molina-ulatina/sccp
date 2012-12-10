@@ -17,15 +17,17 @@
 </p>
 
 <p>
-  <b>Lugar atención:</b>
-  <%= @cita.lugar_atencion %>
-</p>
-
-<p>
   <b>Numero consultorio:</b>
   <%= @cita.consultorio.numero_consultorio %>
 </p>
 
+<p>
+  <b>Lugar atención:</b>
+  <%= @cita.lugar_atencion %>
+</p>
 
+
+
+<%= button_to 'Reporte', new_reporte_path, :method => :get %>
 <%= link_to 'Editar', edit_cita_path(@cita) %> |
 <%= link_to 'Regresar', citas_path %>
