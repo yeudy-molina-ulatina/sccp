@@ -27,8 +27,7 @@ class CitasController < ApplicationController
   # GET /citas/new.json
   def new
     @cita = Cita.new
-    #@pacientes = Paciente.all(:order => [:apellido1,:apellido2,:nombre])
-    @motivos_consulta = MotivoConsulta.where("estado = ?", MotivoConsulta::ESTADO_INACTIVO)
+    @pacientes = Paciente.joins(:expedientes => :motivos_consulta).where("estado = ?", MotivoConsulta::ESTADO_ACTIVO).order(:apellido1,:apellido2,:nombre)
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @cita }
@@ -38,7 +37,7 @@ class CitasController < ApplicationController
   # GET /citas/1/edit
   def edit
     @cita = Cita.find(params[:id])
-    @motivos_consulta = MotivoConsulta.where("estado = ?", MotivoConsulta::ESTADO_INACTIVO)
+    @pacientes = Paciente.joins(:expedientes => :motivos_consulta).where("estado = ?", MotivoConsulta::ESTADO_ACTIVO).order(:apellido1,:apellido2,:nombre)
   end
 
   # POST /citas

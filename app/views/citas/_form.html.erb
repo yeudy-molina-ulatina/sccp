@@ -14,7 +14,7 @@
   
   <div class="field">
     <%= f.label :paciente %><br />
-    <%= f.collection_select :motivo_consulta_id, @motivos_consulta, :id, :motivo_inicial %>
+    <%= f.collection_select :motivo_consulta_id, @pacientes, :motivo_consulta_activo_id, :nombre_completo %>
   </div>    
 
   
@@ -34,17 +34,16 @@
   </div>
   
   <div class="field">
-    <%= f.label :lugar_atencion %><br />
-    <%= f.text_field :lugar_atencion %>
+    <%= f.label :consultorio_id %><br />
+    <%= f.collection_select :consultorio_id, Consultorio.all, :id, :numero_consultorio %>
   </div>
   
   <div class="field">
-    <%= f.label :numero_consultorio %><br />
-    <%= select_tag "cita[numero_consultorio]", options_for_select(%w{ ConsultorioB Consultorio1 Consultorio3 Consultorio4 Consultorio5 Consultorio6}), :prompt => "Seleccione" %> 
-  </div>
+    <%= f.label :lugar_atencion %><br />
+    <%= f.text_field :lugar_atencion %>
+  </div> 
 
   <div class="actions">
-    <%= button_to 'Reporte', new_reporte_path, :method => :get %>
     <%= f.submit %>
   </div>
 <% end %>

@@ -16,5 +16,13 @@ class Paciente < ActiveRecord::Base
   
   def expediente_individual_id
     expediente_individual.id
-  end  
+  end
+  
+  def motivo_consulta_activo
+    motivos_consulta.where(:estado => MotivoConsulta::ESTADO_ACTIVO).first
+  end   
+  
+   def motivo_consulta_activo_id
+    motivo_consulta_activo.id
+  end      
 end

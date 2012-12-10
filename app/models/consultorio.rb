@@ -1,3 +1,3 @@
 class Consultorio < ActiveRecord::Base
-  belongs_to :citas
+  has_many :citas
 end
