@@ -19,16 +19,16 @@
 
   <div class="field">
     <%= f.label "Fecha" %><br />
-    <%= f.date_select :fecha %>
+    <%= f.date_select :fecha, :start_year => (Time.now.year), :end_year => (Time.now.year + 10) %>
   </div>
   <div class="field">
     <%= f.label "Hora inicio" %><br />
-    <%= f.time_select :hora_inicio, {:ampm => true}%>
+    <%= f.time_select :hora_inicio, {:minute_step => 30, :ampm => true}%>
   </div>
   
   <div class="field">
     <%= f.label "Hora final" %><br />
-    <%= f.time_select :hora_fin, {:ampm => true}%>
+    <%= f.time_select :hora_fin, {:minute_step => 30, :ampm => true}%>
   </div>
   
   <div class="field">
