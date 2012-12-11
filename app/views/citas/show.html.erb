@@ -27,7 +27,9 @@
 </p>
 
 
+<br/>
+<%= button_to 'Reporte', new_cita_reporte_path(@cita), :method => :get %>
+<br/>
 
-<%= button_to 'Reporte', new_reporte_path, :method => :get %>
 <%= link_to 'Editar', edit_cita_path(@cita) %> |
-<%= link_to 'Regresar', citas_path %>
+<%= link_to 'Regresar', params[:desde].nil? ? citas_path : params[:desde] %>

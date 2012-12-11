@@ -10,10 +10,11 @@ class ReportesController < ApplicationController
     end
   end
 
-  # GET /reportes/1
-  # GET /reportes/1.json
+  # GET /citas/1/reportes/1
+  # GET /citas/1//reportes/1.json
   def show
-    @reporte = Reporte.find(params[:id])
+    @cita = Cita.find(params[:cita_id])
+    @reporte = @cita.reportes.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -21,10 +22,11 @@ class ReportesController < ApplicationController
     end
   end
 
-  # GET /reportes/new
-  # GET /reportes/new.json
+  # GET citas/1/reportes/new
+  # GET citas/1/reportes/new.json
   def new
-    @reporte = Reporte.new
+    @cita = Cita.find(params[:cita_id])
+    @reporte = @cita.reportes.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -37,14 +39,15 @@ class ReportesController < ApplicationController
     @reporte = Reporte.find(params[:id])
   end
 
-  # POST /reportes
-  # POST /reportes.json
+  # POST citas/1/reportes
+  # POST citas/1/reportes.json
   def create
-    @reporte = Reporte.new(params[:reporte])
+    @cita = Cita.find(params[:cita_id])
+    @reporte = @cita.reportes.create(params[:reporte])    
 
     respond_to do |format|
       if @reporte.save
-        format.html { redirect_to @reporte, notice: 'Reporte fue creado exitosamente.' }
+        format.html { redirect_to [@cita, @reporte], notice: 'Reporte fue creado exitosamente.' }
         format.json { render json: @reporte, status: :created, location: @reporte }
       else
         format.html { render action: "new" }
