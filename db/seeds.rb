@@ -46,7 +46,8 @@ Consultorio.delete_all
 #
 Consultorio.delete_all
 
-consultorios = [{:numero_consultorio => 'Consultorio B', :proposito => 'Tratamientos relajacion'},
+consultorios = [{:numero_consultorio => 'Seleccione', :proposito => 'Seleccione'},
+                {:numero_consultorio => 'Consultorio B', :proposito => 'Tratamientos relajacion'},
                 {:numero_consultorio => 'Consultorio 1', :proposito => 'Consultorio 1'},  
                 {:numero_consultorio => 'Consultorio 3', :proposito => 'Atencion de infantes'},
                 {:numero_consultorio => 'Consultorio 4', :proposito => 'Consultorio 4'},

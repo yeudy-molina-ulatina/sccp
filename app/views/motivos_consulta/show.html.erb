@@ -84,7 +84,7 @@
 </div>
 
 <div align="center">
-	<b>HISTORIAL DE REPORTES</b>
+	<b>HISTORIAL DE CITAS</b>
 
 	<table>
 		<table width="700" height="70" border="1">
@@ -105,7 +105,7 @@
 				<td> </td>
 				<td> </td>
 				<td> mas detalles </td>
-				<td><%= link_to 'Mostrar', cita, :method => :get %></td>
+				<td><%= link_to 'Mostrar', cita_path(cita, :desde => motivo_consulta_path(@motivo_consulta)), :method => :get %></td>
 			</tr>
 			<% end %>
 
