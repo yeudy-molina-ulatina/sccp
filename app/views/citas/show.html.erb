@@ -8,12 +8,12 @@
 
 <p>
   <b>Hora inicial:</b>
-  <%= @cita.hora_inicio %>
+  <%= @cita.hora_inicio.strftime('%H:%M') %>
 </p>
 
 <p>
   <b>Hora final:</b>
-  <%= @cita.hora_fin%>
+  <%= @cita.hora_fin.strftime('%H:%M')%>
 </p>
 
 <p>

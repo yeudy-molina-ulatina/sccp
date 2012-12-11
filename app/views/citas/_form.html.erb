@@ -23,12 +23,12 @@
   </div>
   <div class="field">
     <%= f.label "Hora inicio" %><br />
-    <%= f.time_select :hora_inicio, {:minute_step => 30, :ampm => true}%>
+    <%= f.time_select :hora_inicio, {:minute_step => 30}%>
   </div>
   
   <div class="field">
     <%= f.label "Hora final" %><br />
-    <%= f.time_select :hora_fin, {:minute_step => 30, :ampm => true}%>
+    <%= f.time_select :hora_fin, {:minute_step => 30}%>
   </div>
   
   <div class="field">
@@ -42,6 +42,6 @@
   </div> 
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Crear Cita' %>
   </div>
 <% end %>

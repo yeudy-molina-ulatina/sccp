@@ -36,7 +36,7 @@
     <%= f.text_field :apellido2 %>
   </div>
   <div class="field">
-    <%= f.label :correo_electronico %><br />
+    <%= f.label :correo_electronico, 'Correo electrónico' %><br />
     <%= f.text_field :correo_electronico %>
   </div>
   <div class="field">
@@ -44,6 +44,6 @@
     <%= f.collection_select :rol_id, Rol.all, :id, :nombre %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Crear Usuario' %>
   </div>
 <% end %>
