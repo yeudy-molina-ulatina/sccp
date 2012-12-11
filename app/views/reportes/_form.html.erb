@@ -13,19 +13,19 @@
 
   <div class="field">
     <%= f.label :temas_discutidos %><br />
-    <%= f.text_area :temas_discutidos %>
+    <%= f.text_area :temas_discutidos, :size => "130x5" %>
   </div>
   <div class="field">
     <%= f.label :actividades_realizadas %><br />
-    <%= f.text_area :actividades_realizadas %>
+    <%= f.text_area :actividades_realizadas, :size => "130x5" %>
   </div>
   <div class="field">
     <%= f.label :acuerdos %><br />
-    <%= f.text_area :acuerdos %>
+    <%= f.text_area :acuerdos, :size => "130x5"%>
   </div>
   <div class="field">
     <%= f.label :tratamiento %><br />
-    <%= f.text_area :tratamiento %>
+    <%= f.text_area :tratamiento, :size => "130x5" %>
   </div>
   <div class="field">
     <%= f.label :diagnostico %><br />
@@ -33,6 +33,6 @@
   </div>
   
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Crear Reporte' %>
   </div>
 <% end %>

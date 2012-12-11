@@ -95,7 +95,8 @@
 				<th bgcolor="white" scope="col">Lugar de atencion</th>
 				<th bgcolor="white" scope="col">Consultorio</th>
 				
-
+             </tr>
+			
 			<% @motivo_consulta.citas.each do |cita| %>
 			<tr>
 				<td> <%= cita.fecha %> </td>
@@ -110,9 +111,8 @@
 			    </td>
 				<td> <%= cita.lugar_atencion %></td>
 				<td> <%= cita.consultorio.numero_consultorio %></td>
-				<td><%= link_to 'Mostrar', cita_path(cita, :desde => motivo_consulta_path(@motivo_consulta)), :method => :get %></td>
-			    <td> ver reporte </td>
-			    <td> crear reporte </td>
+				<td> <%= link_to 'Mostrar', cita_path(cita, :desde => motivo_consulta_path(@motivo_consulta)), :method => :get %></td>
+			    			    
 			</tr>
 			<% end %>
 
