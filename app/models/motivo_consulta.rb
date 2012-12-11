@@ -1,5 +1,6 @@
 class MotivoConsulta < ActiveRecord::Base
   belongs_to :expediente
+  has_many :adjuntos
   has_many :citas
   has_many :pacientes, :through => :expediente
   has_many :asignaciones

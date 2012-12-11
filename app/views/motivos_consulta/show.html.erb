@@ -110,7 +110,18 @@
 			<% end %>
 
 		</table>
-</div>
+		
+		<br />
+<br />
+
+		<%= form_for(@motivo_consulta) do |f| %>
+
+		    Adjuntar archivo:
+			<%= f.file_field :archivo %>
+			<br />
+			<%= link_to 'Adjuntar'  %>
+			<%end%>
+		</div>
 
 <br />
 <br />

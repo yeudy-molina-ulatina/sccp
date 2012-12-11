@@ -1,4 +1,4 @@
-<%= form_for(@motivo_consulta) do |f| %>
+ <%= form_for(@motivo_consulta) do |f| %>
   <% if @motivo_consulta.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@motivo_consulta.errors.count, "error") %> prohibited this motivo_consulta from being saved:</h2>
@@ -29,6 +29,7 @@
   <div class="field">
     <%= f.label :derivacion %><br />
     <%= f.text_field :derivacion %>
+
   </div>
   
   <div class="field">
@@ -49,7 +50,7 @@
   
   
 	<div class="actions">
-    	<%= f.submit 'Crear Motivo Consulta'%>
+    	<%= f.submit 'Guardar Motivo Consulta'%>
   	</div>
   
   

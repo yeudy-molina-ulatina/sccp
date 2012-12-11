@@ -19,6 +19,12 @@ class MotivosConsultaController < ApplicationController
       format.json { render json: @motivos_consulta }
     end
   end
+  
+  def adjuntar
+    
+    
+  
+  end
 
   # GET /motivos_consulta/1
   # GET /motivos_consulta/1.json

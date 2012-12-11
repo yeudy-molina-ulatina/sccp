@@ -23,8 +23,12 @@ end
 gem 'jquery-rails'
 gem 'modernizr-rails'
 
+
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
+
+# Using Paperclip
+gem "paperclip", "~> 3.0"
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
