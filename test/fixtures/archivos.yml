@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  motivo_consulta: 
+  url: MyString
+
+two:
+  motivo_consulta: 
+  url: MyString

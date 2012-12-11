@@ -2,9 +2,9 @@ class MotivosConsultaController < ApplicationController
   # GET /motivos_consulta
   # GET /motivos_consulta.json
   def index
-    
+
     @motivos_consulta = MotivoConsulta.all
-    
+
     if params[:char].nil? and params[:busqueda].nil?
       @motivos_consulta = MotivoConsulta.all
       @motivos_consulta = MotivoConsulta.joins(:expediente => :pacientes).where("estado = ? AND apellido1 LIKE ?", MotivoConsulta::ESTADO_INACTIVO, "#{params[:char]}%")
@@ -13,24 +13,17 @@ class MotivosConsultaController < ApplicationController
       @motivos_consulta = MotivoConsulta.joins(:expediente => :pacientes).where("estado = ? AND (motivo_inicial LIKE ? OR motivo_real LIKE ? OR nivel_importancia LIKE ? OR apellido1 LIKE ? OR apellido2 LIKE ? OR nombre LIKE ?)", MotivoConsulta::ESTADO_INACTIVO, @busqueda, @busqueda, @busqueda, @busqueda, @busqueda, @busqueda)
     end
 
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @motivos_consulta }
     end
-  end
-  
-  def adjuntar
-    
-    
-  
   end
 
   # GET /motivos_consulta/1
   # GET /motivos_consulta/1.json
   def show
     @motivo_consulta = MotivoConsulta.find(params[:id])
-    
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @motivo_consulta }
@@ -42,7 +35,7 @@ class MotivosConsultaController < ApplicationController
   def new
     @motivo_consulta = MotivoConsulta.new
     @pacientes = Paciente.all(:order => [:apellido1,:apellido2,:nombre])
-    
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @motivo_consulta }
@@ -58,8 +51,8 @@ class MotivosConsultaController < ApplicationController
   # POST /motivos_consulta
   # POST /motivos_consulta.json
   def create
-        
-   @motivo_consulta = MotivoConsulta.new(params[:motivo_consulta].merge({:estado => MotivoConsulta::ESTADO_INACTIVO}))   
+
+    @motivo_consulta = MotivoConsulta.new(params[:motivo_consulta].merge({:estado => MotivoConsulta::ESTADO_INACTIVO}))
     respond_to do |format|
       if @motivo_consulta.save
         format.html { redirect_to @motivo_consulta, notice: 'Motivo de consulta fue creado exitosamente.' }
@@ -98,4 +91,10 @@ class MotivosConsultaController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def upload
+    @motivo_consulta = MotivoConsulta.find(params[:id])
+    Archivo.save(params[:archivo])
+  end
+
 end

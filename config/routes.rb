@@ -13,8 +13,13 @@ Sccp::Application.routes.draw do
 
   resources :motivos_consulta do
     resources :asignaciones
+    member do
+      post 'upload'
+    end
   end
+  
 
+  
   resources :expedientes
 
   resources :pacientes

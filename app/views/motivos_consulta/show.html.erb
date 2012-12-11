@@ -114,13 +114,10 @@
 		<br />
 <br />
 
-		<%= form_for(@motivo_consulta) do |f| %>
-
-		    Adjuntar archivo:
-			<%= f.file_field :archivo %>
-			<br />
-			<%= link_to 'Adjuntar'  %>
-			<%end%>
+<%= form_for @motivo_consulta, :url => {upload_motivo_consulta_path }, :html => {:multipart => true} do |f|  %>
+  <%= file_field_tag 'archivo' %>
+  <%= submit_tag 'Adjuntar archivo'%>
+<% end %>
 		</div>
 
 <br />
