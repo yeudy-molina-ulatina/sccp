@@ -26,6 +26,20 @@
   <%= @cita.lugar_atencion %>
 </p>
 
+<p>
+  <b>Paciente(s):</b>
+  <% @cita.pacientes.each do |paciente| %>
+	<%= paciente.nombre_completo %><br/>	
+  <% end %>
+</p>
+
+<p>
+  <b>Tratante(s):</b>
+  <% @cita.usuarios.each do |supervisor| %>
+	<%= supervisor.nombre_completo %><br/>	
+  <% end %>
+</p>
+
 
 
 <%= button_to 'Reporte', new_reporte_path, :method => :get %>

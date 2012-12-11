@@ -44,7 +44,9 @@ class CitasController < ApplicationController
   # POST /citas.json
   def create
     @cita = Cita.new(params[:cita])
-
+    @motivo_consulta = MotivoConsulta.find(@cita.motivo_consulta_id)
+    @cita.pacientes = @motivo_consulta.pacientes
+    @cita.usuarios = @motivo_consulta.tratantes + @motivo_consulta.supervisores
     respond_to do |format|
       if @cita.save
         format.html { redirect_to @cita, notice: 'Cita was successfully created.' }
