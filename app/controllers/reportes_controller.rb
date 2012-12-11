@@ -36,7 +36,8 @@ class ReportesController < ApplicationController
 
   # GET /reportes/1/edit
   def edit
-    @reporte = Reporte.find(params[:id])
+    @cita = Cita.find(params[:cita_id])
+    @reporte = @cita.reportes.find(params[:id])
   end
 
   # POST citas/1/reportes
