@@ -15,8 +15,8 @@
 	<% @citas.each do |cita| %>
 	<tr>
 		<td><%= cita.fecha %></td>
-		<td><%= cita.hora_inicio%></td>
-		<td><%= cita.hora_fin %></td>
+		<td><%= cita.hora_inicio.strftime('%H:%M')  %></td>
+		<td><%= cita.hora_fin.strftime('%H:%M')  %></td>
 		<td><%= cita.consultorio.numero_consultorio %></td>
 		<td><%= cita.lugar_atencion %></td>
 		<td>
