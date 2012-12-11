@@ -1,18 +1,17 @@
-<h1>Listing reportes</h1>
+<h1 class="content_title">Lista de reportes</h1>
 
-<table>
-  <tr>
-    <th>Temas discutidos</th>
-    <th>Actividades realizadas</th>
-    <th>Acuerdos</th>
-    <th>Tipo</th>
-    <th>Tratamiento</th>
-    <th>Diagnostico</th>
-    <th>Cita</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+
+    <table class="list_resourses">
+  	<tr>
+   	 <th bgcolor="white" scope="col">Temas discutidos</th>
+   	 <th bgcolor="white" scope="col">Actividades realizadas</th>
+   	 <th bgcolor="white" scope="col">Acuerdos</th>
+   	 <th bgcolor="white" scope="col">Tipo</th>
+   	 <th bgcolor="white" scope="col">Tratamiento</th>
+   	 <th bgcolor="white" scope="col">Diagnostico</th>
+   	 <th bgcolor="white" scope="col">Cita</th>
+    
+  	</tr>
 
 <% @reportes.each do |reporte| %>
   <tr>
@@ -23,13 +22,12 @@
     <td><%= reporte.tratamiento %></td>
     <td><%= reporte.diagnostico %></td>
     <td><%= reporte.cita %></td>
-    <td><%= link_to 'Show', reporte %></td>
-    <td><%= link_to 'Edit', edit_reporte_path(reporte) %></td>
-    <td><%= link_to 'Destroy', reporte, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Mostrar', reporte %></td>
+    
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Reporte', new_reporte_path %>
+<%= link_to 'Nuevo Reporte', new_reporte_path %>

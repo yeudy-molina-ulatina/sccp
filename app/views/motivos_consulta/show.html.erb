@@ -99,11 +99,12 @@
 
 			<% @motivo_consulta.citas.each do |cita| %>
 			<tr>
-				<td><%= cita.fecha %></td>
-				<td>Tratante</td>
-				<td>Diagnóstico</td>
-				<td>Tratamiento</td>
-				<td>Temas Discutidos</td>
+				<td> <%= cita.fecha %> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> mas detalles </td>
 				<td><%= link_to 'Mostrar', cita, :method => :get %></td>
 			</tr>
 			<% end %>
