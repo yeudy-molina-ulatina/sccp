@@ -44,10 +44,12 @@ class CitasController < ApplicationController
   # POST /citas.json
   def create
     @cita = Cita.new(params[:cita])
-
+    @motivo_consulta = MotivoConsulta.find(@cita.motivo_consulta_id)
+    @cita.pacientes = @motivo_consulta.pacientes
+    @cita.usuarios = @motivo_consulta.tratantes + @motivo_consulta.supervisores
     respond_to do |format|
       if @cita.save
-        format.html { redirect_to @cita, notice: 'Cita was successfully created.' }
+        format.html { redirect_to @cita, notice: 'Cita creada satisfactoriamente.' }
         format.json { render json: @cita, status: :created, location: @cita }
       else
         format.html { render action: "new" }
@@ -63,7 +65,7 @@ class CitasController < ApplicationController
 
     respond_to do |format|
       if @cita.update_attributes(params[:cita])
-        format.html { redirect_to @cita, notice: 'Cita was successfully updated.' }
+        format.html { redirect_to @cita, notice: 'Cita creada satisfactoriamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

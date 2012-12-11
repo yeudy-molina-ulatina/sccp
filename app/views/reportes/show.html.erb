@@ -15,10 +15,6 @@
   <%= @reporte.acuerdos %>
 </p>
 
-<p>
-  <b>Tipo:</b>
-  <%= @reporte.tipo %>
-</p>
 
 <p>
   <b>Tratamiento:</b>
@@ -30,11 +26,7 @@
   <%= @reporte.diagnostico %>
 </p>
 
-<p>
-  <b>Cita:</b>
-  <%= @reporte.cita %>
-</p>
 
 
-<%= link_to 'Edit', edit_reporte_path(@reporte) %> |
-<%= link_to 'Back', reportes_path %>
+<%= link_to 'Editar', edit_cita_reporte_path(@cita, @reporte) %> |
+<%= link_to 'Regresar', cita_reportes_path(@cita)%>

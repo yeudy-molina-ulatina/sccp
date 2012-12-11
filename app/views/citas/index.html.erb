@@ -5,8 +5,8 @@
 		<th>Fecha</th>
 		<th>Hora inicio</th>
 		<th>Hora fin</th>
-		<th>Lugar atención</th>
 		<th>Consultorio</th>
+		<th>Lugar atención</th>
 		<th>Paciente(s)</th>
 		<th>Tratante(s)</th>
 		<th>Editar/Cancelar</th>
@@ -15,18 +15,18 @@
 	<% @citas.each do |cita| %>
 	<tr>
 		<td><%= cita.fecha %></td>
-		<td><%= cita.hora_inicio%></td>
-		<td><%= cita.hora_fin %></td>
-		<td><%= cita.lugar_atencion %></td>
+		<td><%= cita.hora_inicio.strftime('%H:%M')  %></td>
+		<td><%= cita.hora_fin.strftime('%H:%M')  %></td>
 		<td><%= cita.consultorio.numero_consultorio %></td>
+		<td><%= cita.lugar_atencion %></td>
 		<td>
 			<% cita.pacientes.each do |paciente| %>
 				<%= paciente.nombre_completo %><br/>
 			<% end %>
 		</td>
 		<td>
-			<% cita.usuarios.each do |usuario| %>
-				<%= usuario.nombre_completo %><br/>
+			<% cita.usuarios.each do |supervisor| %>
+				<%= supervisor.nombre_completo %><br/>
 			<% end %>
 		</td>
 		<td><%= link_to 'Editar', edit_cita_path(cita) %> | <%= link_to 'Cancelar Cita', cita, confirm: '¿Esta seguro?', method: :delete %></td>

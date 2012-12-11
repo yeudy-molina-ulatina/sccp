@@ -1,4 +1,4 @@
-<%= form_for(@reporte) do |f| %>
+<%= form_for([@cita, @reporte]) do |f| %>
   <% if @reporte.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@reporte.errors.count, "error") %> prohibited this reporte from being saved:</h2>
@@ -13,33 +13,26 @@
 
   <div class="field">
     <%= f.label :temas_discutidos %><br />
-    <%= f.text_area :temas_discutidos %>
+    <%= f.text_area :temas_discutidos, :size => "130x5" %>
   </div>
   <div class="field">
     <%= f.label :actividades_realizadas %><br />
-    <%= f.text_area :actividades_realizadas %>
+    <%= f.text_area :actividades_realizadas, :size => "130x5" %>
   </div>
   <div class="field">
     <%= f.label :acuerdos %><br />
-    <%= f.text_area :acuerdos %>
-  </div>
-  <div class="field">
-    <%= f.label :tipo %><br />
-    <%= f.text_field :tipo %>
+    <%= f.text_area :acuerdos, :size => "130x5"%>
   </div>
   <div class="field">
     <%= f.label :tratamiento %><br />
-    <%= f.text_area :tratamiento %>
+    <%= f.text_area :tratamiento, :size => "130x5" %>
   </div>
   <div class="field">
     <%= f.label :diagnostico %><br />
     <%= f.text_field :diagnostico %>
   </div>
-  <div class="field">
-    <%= f.label :cita %><br />
-    <%= f.text_field :cita %>
-  </div>
+  
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Crear Reporte' %>
   </div>
 <% end %>

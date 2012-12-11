@@ -8,16 +8,16 @@
 
 <p>
   <b>Hora inicial:</b>
-  <%= @cita.hora_inicio%>
+  <%= @cita.hora_inicio.strftime('%H:%M') %>
 </p>
 
 <p>
   <b>Hora final:</b>
-  <%= @cita.hora_fin%>
+  <%= @cita.hora_fin.strftime('%H:%M')%>
 </p>
 
 <p>
-  <b>Numero consultorio:</b>
+  <b>Número consultorio:</b>
   <%= @cita.consultorio.numero_consultorio %>
 </p>
 
@@ -26,8 +26,53 @@
   <%= @cita.lugar_atencion %>
 </p>
 
+<p>
+  <b>Paciente(s):</b>
+  <% @cita.pacientes.each do |paciente| %>
+	<%= paciente.nombre_completo %><br/>	
+  <% end %>
+</p>
+
+<p>
+  <b>Tratante(s):</b>
+  <% @cita.usuarios.each do |supervisor| %>
+	<%= supervisor.nombre_completo %><br/>	
+  <% end %>
+</p>
+
+<div align="center">
+	<b>HISTORIAL DE REPORTES</b>
+
+	<table>
+		<table width="700" height="70" border="1">
+			<tr>
+				<th bgcolor="white" scope="col">Diagnostico</th>
+				<th bgcolor="white" scope="col">Tratamiento</th>
+				<th bgcolor="white" scope="col">Temas Discutidos</th>
+				<th bgcolor="white" scope="col">Editar</th>
+								
+
+			<% @cita.reportes.each do |reporte| %>
+			<tr>
+				<td> <%= reporte.diagnostico %> </td>
+				<td> <%= reporte.tratamiento %></td>
+			 	<td> <%= reporte.temas_discutidos %></td>
+			 	
+			 	<td> <%= link_to 'Editar', edit_cita_reporte_path(@cita) %> </td>
+			    
+								
+			</tr>
+			<% end %>
+
+		</table>
+</div>
 
 
-<%= button_to 'Reporte', new_reporte_path, :method => :get %>
+
+
+<br/>
+<%= button_to 'Nuevo Reporte', new_cita_reporte_path(@cita), :method => :get %>
+<br/>
+
 <%= link_to 'Editar', edit_cita_path(@cita) %> |
-<%= link_to 'Regresar', citas_path %>
+<%= link_to 'Regresar', params[:desde].nil? ? citas_path : params[:desde] %>

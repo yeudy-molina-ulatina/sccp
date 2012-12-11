@@ -2,11 +2,9 @@ Sccp::Application.routes.draw do
 
   resources :usuarios
 
-  resources :reportes
-
-  resources :citas
-  
-
+  resources :citas do
+    resources :reportes
+  end
   get "lista_espera/index", :as => :lista_espera
 
   get "clinica/index"

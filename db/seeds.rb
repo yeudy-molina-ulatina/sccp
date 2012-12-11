@@ -51,7 +51,8 @@ consultorios = [{:numero_consultorio => 'Consultorio B', :proposito => 'Tratamie
                 {:numero_consultorio => 'Consultorio 3', :proposito => 'Atencion de infantes'},
                 {:numero_consultorio => 'Consultorio 4', :proposito => 'Consultorio 4'},
                 {:numero_consultorio => 'Consultorio 5', :proposito => 'Tratamientos relajacion'},
-                {:numero_consultorio => 'Consultorio 6', :proposito => 'Consultorio 6'}
+                {:numero_consultorio => 'Consultorio 6', :proposito => 'Consultorio 6'},
+                {:numero_consultorio => 'Otro', :proposito => 'Otro'}
   ]
   
 consultorios.each do |consultorio|
