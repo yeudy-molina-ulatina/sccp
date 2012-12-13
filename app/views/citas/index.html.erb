@@ -8,8 +8,10 @@
 		<th>Consultorio</th>
 		<th>Lugar atención</th>
 		<th>Paciente(s)</th>
+		<th>Edad</th>
 		<th>Tratante(s)</th>
 		<th>Editar/Cancelar</th>
+		<th>Ver</th>
 	</tr>
 
 	<% @citas.each do |cita| %>
@@ -25,11 +27,17 @@
 			<% end %>
 		</td>
 		<td>
+			<% cita.pacientes.each do |paciente| %>
+				<%= paciente.edad %> <br/>
+			<% end %>
+		</td>
+		<td>
 			<% cita.usuarios.each do |supervisor| %>
 				<%= supervisor.nombre_completo %><br/>
 			<% end %>
 		</td>
 		<td><%= link_to 'Editar', edit_cita_path(cita) %> | <%= link_to 'Cancelar Cita', cita, confirm: '¿Esta seguro?', method: :delete %></td>
+		<td><%= link_to 'Ver', cita %></td>
 	</tr>
 	<% end %>
 </table>

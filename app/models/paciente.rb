@@ -24,5 +24,15 @@ class Paciente < ActiveRecord::Base
   
    def motivo_consulta_activo_id
     motivo_consulta_activo.id
-  end      
+  end
+  
+    def edad
+      edad = Date.today.year - read_attribute(:fecha_nacimiento).year
+      if Date.today.month < read_attribute(:fecha_nacimiento).month || (Date.today.month == read_attribute(:fecha_nacimiento).month &&
+        read_attribute(:fecha_nacimiento).day >= Date.today.day)
+      edad = edad - 1
+    end
+    return edad
+  end
+          
 end

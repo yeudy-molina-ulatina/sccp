@@ -36,7 +36,10 @@
     </td>
 	<td><%= motivo_consulta.expediente.id %></td>
 	<td><%= motivo_consulta.motivo_inicial %></td>
-    <td><%= motivo_consulta.fecha_inicio %></td>
+    <td><% motivo_consulta.expediente.pacientes.each do |paciente| %>
+			<%= paciente.edad %><br/>
+    	<% end %>
+    	</td>
     <td><%= motivo_consulta.nivel_importancia %></td>
 	<td><%= link_to 'Mostrar', motivo_consulta, :method => :get %></td>
 	<td><%= link_to 'Asignar', new_motivo_consulta_asignacion_path(motivo_consulta, :tipo_asignacion => Asignacion::TIPO_ASIGNACION_TRATANTE), :method => :get %></td>
