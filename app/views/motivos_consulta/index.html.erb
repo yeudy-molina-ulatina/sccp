@@ -15,8 +15,7 @@
     <th>Paciente</th>
     <th>Expediente</th>
     <th>Motivo inicial</th>
-	<th>Estado</th>
-    <th>Fecha inicio</th>
+	<th>Edad</th>
     <th>Nivel importancia</th>
     <th>Más detalles</th>  
   </tr>
@@ -31,8 +30,11 @@
     </td>
 	<td><%= motivo_consulta.expediente.id %></td>
 	<td><%= motivo_consulta.motivo_inicial %></td>
-    <td><%= motivo_consulta.estado %></td>
-    <td><%= motivo_consulta.fecha_inicio %></td>
+    <td>
+    	<% motivo_consulta.expediente.pacientes.each do |paciente| %>
+			<%= paciente.edad %><br/>
+    	<% end %>
+    </td>
     <td><%= motivo_consulta.nivel_importancia %></td>
 	<td><%= link_to 'Mostrar', motivo_consulta, :method => :get %></td>
   </tr>

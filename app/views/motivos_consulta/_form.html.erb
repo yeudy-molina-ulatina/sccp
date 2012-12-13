@@ -22,10 +22,12 @@
     <%= f.label :motivo_inicial %><br />
     <%= f.text_field :motivo_inicial %>
   </div>
+  
   <div class="field">
     <%= f.label :motivo_real %><br />
     <%= f.text_field :motivo_real %>
   </div>
+  
   <div class="field">
     <%= f.label :derivacion %><br />
     <%= f.text_field :derivacion %>
@@ -33,25 +35,13 @@
   </div>
   
   <div class="field">
-    <%= f.label :fecha_inicio %><br />
-    <%= f.date_select :fecha_inicio %>
-  </div>
-  <div class="field">
-    <%= f.label :fecha_fin %><br />
-    <%= f.date_select :fecha_fin%>
-  </div>
-  
-  <div class="field">
     <%= f.label :nivel_importancia %><br />
     <%= select_tag "motivo_consulta[nivel_importancia]", options_for_select(%w{ Bajo Medio Alto Urgente}), :prompt => "Seleccione" %> 
   </div>
   
-   
-  
-  
-	<div class="actions">
+  <div class="actions">
     	<%= f.submit 'Guardar Motivo Consulta'%>
-  	</div>
+  </div>
   
   
 <% end %>
