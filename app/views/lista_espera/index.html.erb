@@ -1,11 +1,10 @@
 <h1 class="content_title">Lista de Espera</h1>
-
+ <br/>
 
 <%= form_tag motivos_consulta_path, :id => "form_buscar", :method => :get do%>
 	Buscar: <%= search_field_tag 'busqueda' %> 
 	<%= submit_tag 'Buscar', :id => 'submit_buscar' %> 
 <% end %> 
- <br/>
  <br/>
  
 <% for char in 'A'..'Z' %>
