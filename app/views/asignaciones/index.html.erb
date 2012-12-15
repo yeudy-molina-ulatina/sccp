@@ -1,4 +1,4 @@
-<h1>Listing asignaciones</h1>
+<h1 class="content_title">Lista de asignaciones</h1>
 
 <table>
 	<tr>
@@ -17,9 +17,9 @@
 		<td><%= asignacion.fecha_inicio %></td>
 		<td><%= asignacion.fecha_final %></td>
 		<td><%= asignacion.tipo_asignacion.humanize %></td>
-		<td><%= link_to 'Show', motivo_consulta_asignacion_path(@motivo_consulta, asignacion) %></td>
-		<td><%= link_to 'Edit', edit_motivo_consulta_asignacion_path(@motivo_consulta, asignacion) %></td>
-		<td><%= link_to 'Destroy', motivo_consulta_asignacion_path(@motivo_consulta, asignacion), confirm: 'Are you sure?', method: :delete %></td>
+		<td><%= link_to 'Mostrar', motivo_consulta_asignacion_path(@motivo_consulta, asignacion) %></td>
+		<td><%= link_to 'Editar', edit_motivo_consulta_asignacion_path(@motivo_consulta, asignacion) %></td>
+		<td><%= link_to 'Eliminar', motivo_consulta_asignacion_path(@motivo_consulta, asignacion), confirm: 'Are you sure?', method: :delete %></td>
 	</tr>
 	<% end %>
 </table>
